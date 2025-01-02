@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdj6gftn4smd7"]
+
+[ext_resource type="Texture2D" uid="uid://k03u1a34eu1n" path="res://Sprites/UI/Pause.png" id="1_125ev"]
+[ext_resource type="Texture2D" uid="uid://ckx6wxx5anajc" path="res://Sprites/UI/Pause_P.png" id="2_p00qm"]
+[ext_resource type="Texture2D" uid="uid://dhxg4s50ac164" path="res://Sprites/UI/Pause_H.png" id="3_xtojp"]
+[ext_resource type="Script" path="res://Scripts/UI/pause_button.gd" id="4_wos61"]
+
+[node name="Pause" type="TextureButton"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 64.0
+grow_horizontal = 0
+texture_normal = ExtResource("1_125ev")
+texture_pressed = ExtResource("2_p00qm")
+texture_hover = ExtResource("3_xtojp")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("4_wos61")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]

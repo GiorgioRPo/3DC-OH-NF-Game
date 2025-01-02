@@ -1,0 +1,128 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvwfbqlt6n7bo"]
+
+[ext_resource type="Script" path="res://Scripts/Levels/settings.gd" id="1_dsciy"]
+[ext_resource type="FontFile" uid="uid://bs15oe3x0itwd" path="res://Fonts/test.ttf" id="2_qa63n"]
+[ext_resource type="Texture2D" uid="uid://dk45kwc4vbwtv" path="res://Sprites/UI/SliderGrabber.png" id="3_tiiof"]
+[ext_resource type="PackedScene" uid="uid://gpyo8xrl20b8" path="res://Scenes/UI/text_button.tscn" id="4_qnm2r"]
+
+[node name="Settings" type="ColorRect"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_dsciy")
+
+[node name="Settings" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = -260.0
+offset_right = 221.0
+offset_bottom = -131.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_qa63n")
+theme_override_font_sizes/font_size = 128
+text = "Settings"
+
+[node name="Music" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = 33.5
+offset_right = 34.5
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_qa63n")
+theme_override_font_sizes/font_size = 33
+text = "Music"
+
+[node name="music_slider" type="HSlider" parent="Music"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = 3.0
+offset_right = 250.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_icons/grabber = ExtResource("3_tiiof")
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="SFX" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = 150.0
+offset_right = 34.5
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_qa63n")
+theme_override_font_sizes/font_size = 33
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="sfx_slider" type="HSlider" parent="SFX"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = 3.0
+offset_right = 250.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_icons/grabber = ExtResource("3_tiiof")
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="Return" parent="." instance=ExtResource("4_qnm2r")]
+layout_mode = 1
+offset_top = 240.0
+offset_bottom = 294.0
+text = "Return
+"
+
+[node name="ScreenShake" parent="." instance=ExtResource("4_qnm2r")]
+layout_mode = 1
+offset_left = -133.5
+offset_top = -60.0
+offset_right = 133.5
+offset_bottom = -6.0
+text = "Screen Shake: ON"
+
+[connection signal="drag_ended" from="Music/music_slider" to="." method="_on_slider_drag_ended"]
+[connection signal="drag_started" from="Music/music_slider" to="." method="_on_slider_drag_started"]
+[connection signal="mouse_entered" from="Music/music_slider" to="." method="_on_slider_mouse_entered"]
+[connection signal="drag_ended" from="SFX/sfx_slider" to="." method="_on_slider_drag_ended"]
+[connection signal="drag_started" from="SFX/sfx_slider" to="." method="_on_slider_drag_started"]
+[connection signal="mouse_entered" from="SFX/sfx_slider" to="." method="_on_slider_mouse_entered"]
+[connection signal="button_up" from="Return" to="." method="_on_return_button_up"]
+[connection signal="button_up" from="ScreenShake" to="." method="_on_screen_shake_button_up"]
