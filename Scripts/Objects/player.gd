@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var max_health:int = 100
 
 # Movement Variables
+var gravity = 600 
 var dir := Vector2.ZERO
 var speed:float = 200
 
@@ -24,7 +25,11 @@ func _physics_process(delta: float) -> void:
 	# Handles Direction and Player Input
 	var target_dir = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
 	dir = dir.move_toward(target_dir, delta*acceleration)
-	
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	if Input.is_action_just_pressed("ui_up") and is_on_floor():
+		velocity.y = JUMP_FORCE
+
 	# Handles Horizontal Sprite Flipping
 	if dir.x > 0:
 		$Sprite.flip_h = false
