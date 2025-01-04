@@ -1,17 +1,3 @@
-res://Scripts/audio_handler.gd
-res://Scripts/audio_node.gd
-res://Scripts/Objects/bullet.gd
-res://Scripts/Objects/camera_2d.gd
-res://Scripts/Global.gd
-res://Scripts/UI/health_bar.gd
-res://Scripts/Levels/level.gd
-res://Scripts/Levels/main_menu.gd
-res://Scripts/Levels/paused.gd
-res://Scripts/UI/pause_button.gd
-res://Scripts/Objects/player.gd
-res://Scripts/UI/red_flash.gd
-res://Scripts/Levels/settings.gd
-res://Scripts/UI/text_button.gd
 res://Scenes/AudioHandler.tscn
 res://Scenes/AudioNode.tscn
 res://Scenes/Levels/level.tscn
@@ -24,3 +10,5 @@ res://Scenes/UI/health_bar.tscn
 res://Scenes/Objects/camera_2d.tscn
 res://Scenes/UI/red_flash.tscn
 res://Scenes/Objects/bullet.tscn
+res://Scripts/Objects/player.gd
+res://Scripts/Levels/level.gd

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bn4q4oybhoxd4"]
+[gd_scene load_steps=16 format=3 uid="uid://bn4q4oybhoxd4"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/level.gd" id="1_e2dhp"]
 [ext_resource type="PackedScene" uid="uid://4jm41curqcp0" path="res://Scenes/Objects/player.tscn" id="2_i5rbt"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://dd1fvp6pte6vp" path="res://Scenes/UI/health_bar.tscn" id="9_wn55x"]
 [ext_resource type="Texture2D" uid="uid://dk45kwc4vbwtv" path="res://Sprites/UI/SliderGrabber.png" id="11_ar7cl"]
 [ext_resource type="Texture2D" uid="uid://dwmmgsyfxts1d" path="res://icon.svg" id="12_mmavn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dto6u"]
+size = Vector2(974, 50)
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("camera", "player", "redflash")]
 script = ExtResource("1_e2dhp")
@@ -42,7 +45,15 @@ modulate = Color(0.688999, 0, 0.273458, 1)
 position = Vector2(395, -283)
 texture = ExtResource("12_mmavn")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="PlaceHolder (Delete This)"]
+position = Vector2(1040, 679)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceHolder (Delete This)/StaticBody2D"]
+position = Vector2(7, 141)
+shape = SubResource("RectangleShape2D_dto6u")
+
 [node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_0jc4h")]
+visible = false
 player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_i5rbt")]
