@@ -11,3 +11,4 @@ res://Scenes/Objects/camera_2d.tscn
 res://Scenes/UI/red_flash.tscn
 res://Scenes/Objects/bullet.tscn
 res://Scripts/Objects/player.gd
+res://Scripts/Levels/level.gd
