@@ -1,14 +1,7 @@
-res://Scenes/AudioHandler.tscn
-res://Scenes/AudioNode.tscn
-res://Scenes/Levels/level.tscn
-res://Scenes/Levels/settings.tscn
 res://Scenes/Objects/player.tscn
-res://Scenes/Levels/main_menu.tscn
-res://Scenes/UI/text_button.tscn
+res://Resources/Shaders/scroll.gdshader
 res://Scenes/UI/pause_button.tscn
-res://Scenes/UI/health_bar.tscn
-res://Scenes/Objects/camera_2d.tscn
-res://Scenes/UI/red_flash.tscn
-res://Scenes/Objects/bullet.tscn
+res://Scenes/Levels/level.tscn
+res://Scenes/Objects/Obstacles/obstacle.tscn
 res://Scripts/Objects/player.gd
 res://Scripts/Levels/level.gd

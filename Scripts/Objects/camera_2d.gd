@@ -12,6 +12,12 @@ extends Camera2D
 ## Sets the distance offset by the mouse (Around the centre of the screen)
 @export var mouse_distance:float = 0.02
 
+## Camere Mode Variables
+# Used for later when needing to incorporate different themes,
+# possibly playing with camera movement
+# 0: Idle, 1: Follow
+var camera_mode:int = 0
+
 # Camera Shake Stuff
 var magnitude:float = 0
 var timeleft:float = 0
@@ -21,23 +27,24 @@ func _ready() -> void:
 	Global.camera = self
 
 func _physics_process(delta) -> void:
-	if player != null:
-		var cam_pos = global_position 
-		var ply_pos = player.global_position
-		var cam_len = (cam_pos-ply_pos).length()
-		var spd = min(cam_len*2, max_speed) + 1 if cam_len < 300 else cam_len*3
-		var cam_dir = (ply_pos-cam_pos).normalized()
-		global_position += delta*spd*cam_dir
-		
-		global_position.x = clamp(global_position.x, -boundaries.x, boundaries.x)
-		global_position.y = clamp(global_position.y, -boundaries.y, boundaries.y)
-		
-		
-		var target_offset = (get_global_mouse_position() - cam_pos)* mouse_distance
-		
-		var cam_len2 = (offset-target_offset).length()
-		var spd2 = min(cam_len2*4, 200) + 20
-		offset = offset.move_toward(target_offset, delta * spd2)
+	if camera_mode == 1:
+		if player != null:
+			var cam_pos = global_position 
+			var ply_pos = player.global_position
+			var cam_len = (cam_pos-ply_pos).length()
+			var spd = min(cam_len*2, max_speed) + 1 if cam_len < 300 else cam_len*3
+			var cam_dir = (ply_pos-cam_pos).normalized()
+			global_position += delta*spd*cam_dir
+			
+			global_position.x = clamp(global_position.x, -boundaries.x, boundaries.x)
+			global_position.y = clamp(global_position.y, -boundaries.y, boundaries.y)
+			
+			
+			var target_offset = (get_global_mouse_position() - cam_pos)* mouse_distance
+			
+			var cam_len2 = (offset-target_offset).length()
+			var spd2 = min(cam_len2*4, 200) + 20
+			offset = offset.move_toward(target_offset, delta * spd2)
 
 
 func shake(new_magnitude,lifetime):
