@@ -2,5 +2,5 @@ res://Scenes/Objects/player.tscn
 res://Resources/Shaders/scroll.gdshader
 res://Scenes/Levels/level.tscn
 res://Scenes/Objects/Obstacles/cactus_obstacle.tscn
-res://Scripts/Levels/level.gd
 res://Scenes/Objects/Obstacles/cactus_obstacle.gd
+res://Scripts/Levels/level.gd

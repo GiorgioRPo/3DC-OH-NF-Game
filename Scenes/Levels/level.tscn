@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bn4q4oybhoxd4"]
+[gd_scene load_steps=19 format=3 uid="uid://bn4q4oybhoxd4"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/level.gd" id="1_e2dhp"]
 [ext_resource type="PackedScene" uid="uid://4jm41curqcp0" path="res://Scenes/Objects/player.tscn" id="2_i5rbt"]
@@ -22,11 +22,22 @@ resource_local_to_scene = true
 shader = ExtResource("10_qedjt")
 shader_parameter/speed = Vector2(0.2, 0)
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("player", "redflash")]
+[sub_resource type="SystemFont" id="SystemFont_8bqwy"]
+font_weight = 550
+
+[sub_resource type="SystemFont" id="SystemFont_f3xmx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sej3g"]
+font = SubResource("SystemFont_f3xmx")
+font_size = 15
+font_color = Color(0, 0, 0, 1)
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("player", "redflash", "score_label")]
 script = ExtResource("1_e2dhp")
 player = NodePath("Player")
 redflash = NodePath("CanvasLayer/RedFlash")
 cactus_obstacle_scene = ExtResource("5_gxrd1")
+score_label = NodePath("CanvasLayer/Label")
 
 [node name="PlaceHolder (Delete This)" type="Sprite2D" parent="."]
 position = Vector2(-551, -142)
@@ -88,6 +99,17 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("13_x3e7g")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = -287.0
+offset_top = -65.0
+offset_right = -159.0
+offset_bottom = -13.0
+theme_override_fonts/font = SubResource("SystemFont_8bqwy")
+text = "gg"
+label_settings = SubResource("LabelSettings_sej3g")
+horizontal_alignment = 2
+autowrap_mode = 2
 
 [connection signal="just_hit" from="Player" to="." method="_on_player_just_hit"]
 [connection signal="pressed" from="CanvasLayer/Restart" to="." method="_on_restart_pressed"]
