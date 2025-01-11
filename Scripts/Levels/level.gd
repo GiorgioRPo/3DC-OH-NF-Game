@@ -17,6 +17,7 @@ var score: int = 0  # Player's score
 
 # Game logic
 var game_speed: float = 0.3
+var last_speed_increase_score: int = 0
 var spawn_timer: Timer
 var is_game_over = false
 # Called when the node enters the scene tree for the first time.
@@ -54,7 +55,14 @@ func _load_high_score() -> int:
 
 func _process(delta: float) -> void:
 	if not is_game_over:
+		# Update score
 		score += int(delta * 150)
+
+		# Increase game_speed every 1000 score
+		if score - last_speed_increase_score >= 1000:
+			game_speed += 0.1
+			last_speed_increase_score = score
+			print("Game speed increased to ", game_speed)
 	else:
 		spawn_timer.stop()
 		$Floor.material.set_shader_parameter("speed", Vector2(0, 0))
