@@ -10,7 +10,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(Global.node_parent.game_speed)
 	global_position.x -= delta * Global.node_parent.game_speed * 2404
 	if global_position.x < -1000:
 		queue_free()  # Remove off-screen obstacles

@@ -7,6 +7,7 @@ extends Node2D
 @export var spawn_min_interval: float = 1.0  # Minimum spawn interval (seconds)
 @export var spawn_max_interval: float = 3.0  # Maximum spawn interval (seconds)
 @export var score_label: Label  # Assign a Label node for displaying the score
+@export var high_score_label: Label  # Assign a Label node for displaying the high score
 
 var high_score: int = 0
 var high_score_file: String = "user://high_score.save"
@@ -71,9 +72,14 @@ func _process(delta: float) -> void:
 			_save_high_score(high_score)
 
 	if score_label:
-		score_label.text = str(score)
+		score_label.text = str(score).pad_zeros(6)
 	else:
 		print("Score Label is not assigned or does not exist!")
+	
+	if high_score_label and high_score:
+		high_score_label.text = "Hi: " + str(high_score).pad_zeros(6)
+	else:
+		print("High Score Label is not assigned or does not exist!")
 	
 	$Floor.material.set_shader_parameter("speed", Vector2(game_speed, 0))
 
