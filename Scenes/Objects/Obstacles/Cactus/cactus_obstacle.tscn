@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://vprsm62rpujb"]
 
-[ext_resource type="Script" path="res://Scenes/Objects/Obstacles/cactus_obstacle.gd" id="1_fvym7"]
+[ext_resource type="Script" path="res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd" id="1_fvym7"]
 [ext_resource type="Texture2D" uid="uid://cg5qmsh4imexf" path="res://Sprites/Google Chrome Dino SpriteSheet.png" id="1_meoc8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eljq7"]

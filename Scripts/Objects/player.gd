@@ -17,6 +17,8 @@ var jump_duration:float = 0
 const hold_jump_length:float = 0.1
 var holding_jump:bool = false
 var can_jump:bool = false
+var max_jump = 2
+var jump_count = 0
 
 var holding_down:bool = false
 

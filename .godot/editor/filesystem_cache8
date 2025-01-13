@@ -1,82 +1,87 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1736692331
-icon.svg::CompressedTexture2D::8728929445595649767::1728632783::1736692331::1::::<><>::
-README.md::TextFile::-1::1735834481::0::1::::<><>::
-::res://Audio/::1736089953
-click.wav::AudioStreamWAV::5222136512893720142::1728640101::1736692332::1::::<><>::
-hover.wav::AudioStreamWAV::6461609905906622378::1728639904::1736692332::1::::<><>::
-::res://Fonts/::1736089952
-test.ttf::FontFile::3705340456107585131::1707073889::1736692331::1::::<><>::
-::res://Resources/::1736094370
-::res://Resources/Shaders/::1736096980
-scroll.gdshader::Shader::-1::1736096980::0::1::::<><>::
-::res://Scenes/::1735996339
-AudioHandler.tscn::PackedScene::6930083901291505883::1735996339::0::1::::<><>::res://Scripts/audio_handler.gd
-AudioNode.tscn::PackedScene::4063636132783234408::1735996339::0::1::::<><>::uid://cgnv3cfwvtb8a::::res://Audio/click.wav<>res://Scripts/audio_node.gd
-::res://Scenes/Levels/::1736692097
-level.tscn::PackedScene::3359766638220335711::1736692097::0::1::::<><>::res://Scripts/Levels/level.gd<>uid://4jm41curqcp0::::res://Scenes/Objects/player.tscn<>uid://bdj6gftn4smd7::::res://Scenes/UI/pause_button.tscn<>uid://c1wqsr211losi::::res://Scenes/Levels/main_menu.tscn<>uid://bvwfbqlt6n7bo::::res://Scenes/Levels/settings.tscn<>uid://vprsm62rpujb::::res://Scenes/Objects/Obstacles/cactus_obstacle.tscn<>uid://bc7pmn6214ho8::::res://Scenes/Levels/paused.tscn<>uid://c2k5dfsj2yv7l::::res://Scenes/Objects/camera_2d.tscn<>uid://6w722ltf84gs::::res://Scenes/UI/red_flash.tscn<>uid://dd1fvp6pte6vp::::res://Scenes/UI/health_bar.tscn<>res://Resources/Shaders/scroll.gdshader<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png<>uid://uscpvpca3tmf::::res://Sprites/UI/Restart Button.png
-main_menu.tscn::PackedScene::6644172164562097308::1735996956::0::1::::<><>::res://Scripts/Levels/main_menu.gd<>uid://bs15oe3x0itwd::::res://Fonts/test.ttf<>uid://gpyo8xrl20b8::::res://Scenes/UI/text_button.tscn
-paused.tscn::PackedScene::2593791375472572737::1735996956::0::1::::<><>::res://Scripts/Levels/paused.gd<>uid://bs15oe3x0itwd::::res://Fonts/test.ttf<>uid://gpyo8xrl20b8::::res://Scenes/UI/text_button.tscn
-settings.tscn::PackedScene::3906108939710531752::1735996956::0::1::::<><>::res://Scripts/Levels/settings.gd<>uid://bs15oe3x0itwd::::res://Fonts/test.ttf<>uid://dk45kwc4vbwtv::::res://Sprites/UI/SliderGrabber.png<>uid://gpyo8xrl20b8::::res://Scenes/UI/text_button.tscn
-tile_map.tscn::PackedScene::1489875558969271757::1736094050::0::1::::<><>::uid://bc3c0l2no8fyu::::res://Sprites/Terrain (16x16).png<>uid://51vf0e2b36lc::::res://Sprites/StoneTiles.png
-::res://Scenes/Objects/::1736692097
-bullet.tscn::PackedScene::2280088545343313456::1735996339::0::1::::<><>::uid://dk45kwc4vbwtv::::res://Sprites/UI/SliderGrabber.png<>res://Scripts/Objects/bullet.gd
-camera_2d.tscn::PackedScene::6690411081187581615::1735996339::0::1::::<><>::res://Scripts/Objects/camera_2d.gd
-player.tscn::PackedScene::2054837626854687151::1736096974::0::1::::<><>::res://Scripts/Objects/player.gd<>uid://xn8eq6mhn8o::::res://Sprites/DinoWalk.png<>uid://bndt2l82maxqq::::res://Sprites/DinoDuck.png
-::res://Scenes/Objects/Obstacles/::1736692097
-cactus_obstacle.gd::GDScript::-1::1736692097::0::1::::<>Node2D<>::
-cactus_obstacle.tscn::PackedScene::1505996395296120491::1736692097::0::1::::<><>::res://Scenes/Objects/Obstacles/cactus_obstacle.gd<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png
-::res://Scenes/UI/::1736096974
-health_bar.tscn::PackedScene::7423844326681094213::1735996339::0::1::::<><>::uid://bgwun21dsj6on::::res://Sprites/UI/HealthBar/HealthBarBack.png<>res://Scripts/UI/health_bar.gd<>uid://xm2campb8iw::::res://Sprites/UI/HealthBar/HealthBarWhite.png<>uid://cqq4eu1myya7v::::res://Sprites/UI/HealthBar/HealthBar.png<>uid://45fdu5bixnhi::::res://Sprites/UI/HealthBar/HealthBarFront.png
-pause_button.tscn::PackedScene::2617459848531096310::1736096974::0::1::::<><>::uid://k03u1a34eu1n::::res://Sprites/UI/Pause.png<>uid://ckx6wxx5anajc::::res://Sprites/UI/Pause_P.png<>uid://dhxg4s50ac164::::res://Sprites/UI/Pause_H.png<>res://Scripts/UI/pause_button.gd
-red_flash.tscn::PackedScene::2223263059566865994::1735996339::0::1::::<><>::res://Scripts/UI/red_flash.gd<>uid://dk3cfcofdro1b::::res://Sprites/UI/red_gradient.png
-text_button.tscn::PackedScene::453582706669403023::1735996339::0::1::::<><>::uid://bs15oe3x0itwd::::res://Fonts/test.ttf<>res://Scripts/UI/text_button.gd
-::res://Scripts/::1735996331
-audio_handler.gd::GDScript::-1::1735996331::0::1::::<>Node<>::
-audio_node.gd::GDScript::-1::1735996331::0::1::::<>AudioStreamPlayer<>::
-Global.gd::GDScript::-1::1735996331::0::1::::<>Node<>::
-::res://Scripts/Levels/::1736692097
-level.gd::GDScript::-1::1736692097::0::1::::<>Node2D<>::
-main_menu.gd::GDScript::-1::1735996331::0::1::::<>Control<>::
-paused.gd::GDScript::-1::1735996331::0::1::::<>Control<>::
-settings.gd::GDScript::-1::1735996331::0::1::::<>Control<>::
-::res://Scripts/Objects/::1736096900
-bullet.gd::GDScript::-1::1735996331::0::1::::<>Node2D<>::
-camera_2d.gd::GDScript::-1::1736093474::0::1::::<>Camera2D<>::
-player.gd::GDScript::-1::1736096900::0::1::::<>CharacterBody2D<>::
-::res://Scripts/UI/::1735996331
-health_bar.gd::GDScript::-1::1735996331::0::1::::<>TextureRect<>::
-pause_button.gd::GDScript::-1::1735996331::0::1::::<>TextureButton<>::
-red_flash.gd::GDScript::-1::1735996331::0::1::::<>GridContainer<>::
-text_button.gd::GDScript::-1::1735996331::0::1::::<>Button<>::
-::res://Sprites/::1736096659
-clouds_1.png::CompressedTexture2D::7252025194051349958::1736089917::1736692332::1::::<><>::
-clouds_2.png::CompressedTexture2D::7175100560122145458::1736089917::1736692332::1::::<><>::
-clouds_3.png::CompressedTexture2D::4670255768932991724::1736089917::1736692332::1::::<><>::
-clouds_4.png::CompressedTexture2D::7996334948197285265::1736089917::1736692332::1::::<><>::
-Collected.png::CompressedTexture2D::7592926148101250562::1736089917::1736692331::1::::<><>::
-Dino Sheet.png::CompressedTexture2D::998155821966027475::1736096349::1736692331::1::::<><>::
-DinoDuck.png::CompressedTexture2D::3306271253525913324::1736096463::1736692331::1::::<><>::
-DinoWalk.png::CompressedTexture2D::48329176683297148::1736096658::1736692331::1::::<><>::
-ExportIdleRunDmgSpritesheet.png::CompressedTexture2D::1141674250183802038::1736089917::1736692331::1::::<><>::
-Google Chrome Dino SpriteSheet.png::CompressedTexture2D::5256899620810040419::1736092366::1736692331::1::::<><>::
-menudrawn.png::CompressedTexture2D::5561339516838584345::1736089917::1736692331::1::::<><>::
-menufixed.png::CompressedTexture2D::2273461145404917563::1736089917::1736692331::1::::<><>::
-objects.png::CompressedTexture2D::6862750912683027650::1736089917::1736692331::1::::<><>::
-objectstransparent.png::CompressedTexture2D::4609430241470672008::1736091192::1736692331::1::::<><>::
-sky.png::CompressedTexture2D::5494460603330372845::1736089917::1736692332::1::::<><>::
-spritesheet transparent.png::CompressedTexture2D::8471961681016795917::1736091176::1736692331::1::::<><>::
-StoneTiles.png::CompressedTexture2D::2160624437056346692::1736090633::1736692331::1::::<><>::
-Terrain (16x16).png::CompressedTexture2D::2584767646993238560::1736089917::1736692331::1::::<><>::
-::res://Sprites/UI/::1736095607
-Pause.png::CompressedTexture2D::755235038825607745::1728672747::1736692332::1::::<><>::
-Pause_H.png::CompressedTexture2D::7698481727769175891::1728672831::1736692331::1::::<><>::
-Pause_P.png::CompressedTexture2D::5524133251282697756::1728672763::1736692331::1::::<><>::
-red_gradient.png::CompressedTexture2D::7919083554434191621::1730686834::1736692331::1::::<><>::
-Restart Button.png::CompressedTexture2D::1441085019482243017::1736095602::1736692331::1::::<><>::
-SliderGrabber.png::CompressedTexture2D::7922857969998471147::1728640749::1736692331::1::::<><>::
-::res://Sprites/UI/HealthBar/::1736089952
-HealthBar.png::CompressedTexture2D::5930661936835682965::1730689201::1736692332::1::::<><>::
-HealthBarBack.png::CompressedTexture2D::2854209069742822445::1730689201::1736692332::1::::<><>::
-HealthBarFront.png::CompressedTexture2D::2097717837338460162::1730689201::1736692332::1::::<><>::
-HealthBarWhite.png::CompressedTexture2D::48257614304052770::1730689201::1736692332::1::::<><>::
+::res://::1736761976
+icon.svg::CompressedTexture2D::8728929445595649767::1735881308::1736759674::1::::<><>::
+README.md::TextFile::-1::1735881308::0::1::::<><>::
+::res://Audio/::1736759675
+click.wav::AudioStreamWAV::5222136512893720142::1735881308::1736759675::1::::<><>::
+hover.wav::AudioStreamWAV::6461609905906622378::1735881308::1736759675::1::::<><>::
+::res://Fonts/::1736759674
+test.ttf::FontFile::3705340456107585131::1735881308::1736759674::1::::<><>::
+::res://Resources/::1736127468
+::res://Resources/Shaders/::1736761361
+scroll.gdshader::Shader::-1::1736761361::0::1::::<><>::
+::res://Scenes/::1736067668
+AudioHandler.tscn::PackedScene::6930083901291505883::1735959907::0::1::::<><>::res://Scripts/audio_handler.gd
+AudioNode.tscn::PackedScene::4063636132783234408::1735959907::0::1::::<><>::uid://cgnv3cfwvtb8a::::res://Audio/click.wav<>res://Scripts/audio_node.gd
+::res://Scenes/Levels/::1736761361
+level.tscn::PackedScene::3359766638220335711::1736761361::0::1::::<><>::res://Scripts/Levels/level.gd<>uid://4jm41curqcp0::::res://Scenes/Objects/player.tscn<>uid://bdj6gftn4smd7::::res://Scenes/UI/pause_button.tscn<>uid://c1wqsr211losi::::res://Scenes/Levels/main_menu.tscn<>uid://bvwfbqlt6n7bo::::res://Scenes/Levels/settings.tscn<>uid://vprsm62rpujb::::res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.tscn<>uid://bc7pmn6214ho8::::res://Scenes/Levels/paused.tscn<>uid://c2k5dfsj2yv7l::::res://Scenes/Objects/camera_2d.tscn<>uid://6w722ltf84gs::::res://Scenes/UI/red_flash.tscn<>uid://dd1fvp6pte6vp::::res://Scenes/UI/health_bar.tscn<>res://Resources/Shaders/scroll.gdshader<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png<>uid://uscpvpca3tmf::::res://Sprites/UI/Restart Button.png
+main_menu.tscn::PackedScene::6644172164562097308::1736127612::0::1::::<><>::res://Scripts/Levels/main_menu.gd<>uid://bs15oe3x0itwd::::res://Fonts/test.ttf<>uid://gpyo8xrl20b8::::res://Scenes/UI/text_button.tscn
+paused.tscn::PackedScene::2593791375472572737::1736127612::0::1::::<><>::res://Scripts/Levels/paused.gd<>uid://bs15oe3x0itwd::::res://Fonts/test.ttf<>uid://gpyo8xrl20b8::::res://Scenes/UI/text_button.tscn
+settings.tscn::PackedScene::3906108939710531752::1735959907::0::1::::<><>::res://Scripts/Levels/settings.gd<>uid://bs15oe3x0itwd::::res://Fonts/test.ttf<>uid://dk45kwc4vbwtv::::res://Sprites/UI/SliderGrabber.png<>uid://gpyo8xrl20b8::::res://Scenes/UI/text_button.tscn
+tile_map.tscn::PackedScene::1489875558969271757::1736127445::0::1::::<><>::uid://bc3c0l2no8fyu::::res://Sprites/Terrain (16x16).png<>uid://51vf0e2b36lc::::res://Sprites/StoneTiles.png
+::res://Scenes/Objects/::1736761361
+bullet.tscn::PackedScene::2280088545343313456::1735960037::0::1::::<><>::uid://dk45kwc4vbwtv::::res://Sprites/UI/SliderGrabber.png<>res://Scripts/Objects/bullet.gd
+camera_2d.tscn::PackedScene::6690411081187581615::1735959907::0::1::::<><>::res://Scripts/Objects/camera_2d.gd
+player.tscn::PackedScene::2054837626854687151::1736761361::0::1::::<><>::res://Scripts/Objects/player.gd<>uid://xn8eq6mhn8o::::res://Sprites/DinoWalk.png<>uid://bndt2l82maxqq::::res://Sprites/DinoDuck.png
+::res://Scenes/Objects/Obstacles/::1736761968
+::res://Scenes/Objects/Obstacles/Cactus/::1736761361
+cactus_obstacle.gd::GDScript::-1::1736741080::0::1::::<>Node2D<>::
+cactus_obstacle.tscn::PackedScene::1505996395296120491::1736761361::0::1::::<><>::res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png
+::res://Scenes/Objects/Obstacles/Jump Pad/::1736761976
+cactus_obstacle.tscn::PackedScene::4488527227199344536::1736761968::0::1::::<><>::res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png
+jump_pad_obstacle.gd::GDScript::-1::1736761968::0::1::::<>Node2D<>::
+jump_pad_obstacle.tscn::PackedScene::1978192026596620208::1736761984::0::1::::<><>::res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png
+::res://Scenes/UI/::1736352525
+health_bar.tscn::PackedScene::7423844326681094213::1735959907::0::1::::<><>::uid://bgwun21dsj6on::::res://Sprites/UI/HealthBar/HealthBarBack.png<>res://Scripts/UI/health_bar.gd<>uid://xm2campb8iw::::res://Sprites/UI/HealthBar/HealthBarWhite.png<>uid://cqq4eu1myya7v::::res://Sprites/UI/HealthBar/HealthBar.png<>uid://45fdu5bixnhi::::res://Sprites/UI/HealthBar/HealthBarFront.png
+pause_button.tscn::PackedScene::2617459848531096310::1736352525::0::1::::<><>::uid://k03u1a34eu1n::::res://Sprites/UI/Pause.png<>uid://ckx6wxx5anajc::::res://Sprites/UI/Pause_P.png<>uid://dhxg4s50ac164::::res://Sprites/UI/Pause_H.png<>res://Scripts/UI/pause_button.gd
+red_flash.tscn::PackedScene::2223263059566865994::1735959907::0::1::::<><>::res://Scripts/UI/red_flash.gd<>uid://dk3cfcofdro1b::::res://Sprites/UI/red_gradient.png
+text_button.tscn::PackedScene::453582706669403023::1735959907::0::1::::<><>::uid://bs15oe3x0itwd::::res://Fonts/test.ttf<>res://Scripts/UI/text_button.gd
+::res://Scripts/::1735881350
+audio_handler.gd::GDScript::-1::1735881308::0::1::::<>Node<>::
+audio_node.gd::GDScript::-1::1735881308::0::1::::<>AudioStreamPlayer<>::
+Global.gd::GDScript::-1::1735881308::0::1::::<>Node<>::
+::res://Scripts/Levels/::1736741080
+level.gd::GDScript::-1::1736741080::0::1::::<>Node2D<>::
+main_menu.gd::GDScript::-1::1735881308::0::1::::<>Control<>::
+paused.gd::GDScript::-1::1735881308::0::1::::<>Control<>::
+settings.gd::GDScript::-1::1735881308::0::1::::<>Control<>::
+::res://Scripts/Objects/::1736127445
+bullet.gd::GDScript::-1::1735881308::0::1::::<>Node2D<>::
+camera_2d.gd::GDScript::-1::1736127445::0::1::::<>Camera2D<>::
+player.gd::GDScript::-1::1736127445::0::1::::<>CharacterBody2D<>::
+::res://Scripts/UI/::1735881350
+health_bar.gd::GDScript::-1::1735881308::0::1::::<>TextureRect<>::
+pause_button.gd::GDScript::-1::1735881308::0::1::::<>TextureButton<>::
+red_flash.gd::GDScript::-1::1735881308::0::1::::<>GridContainer<>::
+text_button.gd::GDScript::-1::1735881308::0::1::::<>Button<>::
+::res://Sprites/::1736759675
+clouds_1.png::CompressedTexture2D::7252025194051349958::1736038557::1736759675::1::::<><>::
+clouds_2.png::CompressedTexture2D::7175100560122145458::1736038557::1736759675::1::::<><>::
+clouds_3.png::CompressedTexture2D::4670255768932991724::1736038557::1736759675::1::::<><>::
+clouds_4.png::CompressedTexture2D::7996334948197285265::1736038557::1736759675::1::::<><>::
+Collected.png::CompressedTexture2D::7592926148101250562::1736038557::1736759674::1::::<><>::
+Dino Sheet.png::CompressedTexture2D::998155821966027475::1736127445::1736759674::1::::<><>::
+DinoDuck.png::CompressedTexture2D::3306271253525913324::1736127445::1736759674::1::::<><>::
+DinoWalk.png::CompressedTexture2D::48329176683297148::1736127445::1736759674::1::::<><>::
+ExportIdleRunDmgSpritesheet.png::CompressedTexture2D::1141674250183802038::1736038557::1736759674::1::::<><>::
+Google Chrome Dino SpriteSheet.png::CompressedTexture2D::5256899620810040419::1736127445::1736759674::1::::<><>::
+menudrawn.png::CompressedTexture2D::5561339516838584345::1736038557::1736759674::1::::<><>::
+menufixed.png::CompressedTexture2D::2273461145404917563::1736038557::1736759674::1::::<><>::
+objects.png::CompressedTexture2D::6862750912683027650::1736038557::1736759674::1::::<><>::
+objectstransparent.png::CompressedTexture2D::4609430241470672008::1736127446::1736759674::1::::<><>::
+sky.png::CompressedTexture2D::5494460603330372845::1736038557::1736759674::1::::<><>::
+spritesheet transparent.png::CompressedTexture2D::8471961681016795917::1736127446::1736759674::1::::<><>::
+StoneTiles.png::CompressedTexture2D::2160624437056346692::1736127445::1736759674::1::::<><>::
+Terrain (16x16).png::CompressedTexture2D::2584767646993238560::1736038557::1736759674::1::::<><>::
+::res://Sprites/UI/::1736759674
+Pause.png::CompressedTexture2D::755235038825607745::1735881308::1736759674::1::::<><>::
+Pause_H.png::CompressedTexture2D::7698481727769175891::1735881308::1736759674::1::::<><>::
+Pause_P.png::CompressedTexture2D::5524133251282697756::1735881308::1736759674::1::::<><>::
+red_gradient.png::CompressedTexture2D::7919083554434191621::1735881308::1736759674::1::::<><>::
+Restart Button.png::CompressedTexture2D::1441085019482243017::1736127445::1736759674::1::::<><>::
+SliderGrabber.png::CompressedTexture2D::7922857969998471147::1735881308::1736759674::1::::<><>::
+::res://Sprites/UI/HealthBar/::1736759674
+HealthBar.png::CompressedTexture2D::5930661936835682965::1735881308::1736759674::1::::<><>::
+HealthBarBack.png::CompressedTexture2D::2854209069742822445::1735881308::1736759674::1::::<><>::
+HealthBarFront.png::CompressedTexture2D::2097717837338460162::1735881308::1736759674::1::::<><>::
+HealthBarWhite.png::CompressedTexture2D::48257614304052770::1735881308::1736759674::1::::<><>::
