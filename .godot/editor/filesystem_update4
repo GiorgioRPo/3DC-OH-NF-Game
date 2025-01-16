@@ -1,7 +1,10 @@
 res://Scenes/Levels/level.tscn
 res://Resources/Shaders/scroll.gdshader
-res://Scripts/Levels/level.gd
 res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.tscn
 res://Scenes/Objects/Obstacles/Jump Pad/jump_pad_obstacle.tscn
 res://Scenes/Objects/player.tscn
+res://Scripts/Levels/level.gd
+res://Scripts/Objects/obstacles.gd
+res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd
 res://Scripts/Objects/player.gd
+res://Scripts/Objects/camera_2d.gd

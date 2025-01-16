@@ -11,6 +11,7 @@ size = Vector2(6, 21.5625)
 
 [node name="Obstacle" type="Node2D"]
 script = ExtResource("1_fvym7")
+obstacle_id = "cactus"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_meoc8")

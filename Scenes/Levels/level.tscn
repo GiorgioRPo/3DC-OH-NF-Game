@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bn4q4oybhoxd4"]
+[gd_scene load_steps=28 format=3 uid="uid://bn4q4oybhoxd4"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/level.gd" id="1_e2dhp"]
 [ext_resource type="PackedScene" uid="uid://4jm41curqcp0" path="res://Scenes/Objects/player.tscn" id="2_i5rbt"]
@@ -40,19 +40,100 @@ font = SubResource("SystemFont_hryoq")
 font_size = 24
 font_color = Color(0.362829, 0.362829, 0.362829, 1)
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("player", "redflash", "score_label", "high_score_label")]
+[sub_resource type="Animation" id="Animation_wjpse"]
+resource_name = "speed_up"
+length = 1.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.35, 0.6, 0.85, 1.1, 1.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7uhfg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ygy8"]
+_data = {
+"RESET": SubResource("Animation_7uhfg"),
+"speed_up": SubResource("Animation_wjpse")
+}
+
+[sub_resource type="Animation" id="Animation_4o2ca"]
+resource_name = "flip_game"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.17, 0.3),
+"transitions": PackedFloat32Array(1, 0.0001, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.1), Vector2(1, -0.1), Vector2(1, -1)]
+}
+
+[sub_resource type="Animation" id="Animation_qudem"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0e85y"]
+_data = {
+"RESET": SubResource("Animation_qudem"),
+"flip_game": SubResource("Animation_4o2ca")
+}
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("camera", "player", "redflash", "obstacles", "animation_player", "score_label", "high_score_label", "score_animation")]
 script = ExtResource("1_e2dhp")
+camera = NodePath("Camera2D")
 player = NodePath("Player")
 redflash = NodePath("CanvasLayer/RedFlash")
+obstacles = NodePath("Obstacles")
+animation_player = NodePath("AnimationPlayer")
 cactus_obstacle_scene = ExtResource("5_gxrd1")
 jump_pad_scene = ExtResource("3_ah4qt")
 score_label = NodePath("CanvasLayer/Score")
 high_score_label = NodePath("CanvasLayer/Score/HighScore")
+score_animation = NodePath("CanvasLayer/Score/AnimationPlayer")
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_0jc4h")]
 player = NodePath("../Player")
 
 [node name="Floor" type="Sprite2D" parent="."]
+process_mode = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_04eeu")
 position = Vector2(0, 64)
@@ -69,6 +150,8 @@ shape = SubResource("RectangleShape2D_dto6u")
 
 [node name="Player" parent="." instance=ExtResource("2_i5rbt")]
 position = Vector2(-527, -4)
+
+[node name="Obstacles" type="Node2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -88,6 +171,10 @@ grow_vertical = 2
 texture_normal = ExtResource("13_x3e7g")
 
 [node name="RedFlash" parent="CanvasLayer" instance=ExtResource("9_f62e1")]
+offset_left = -146.0
+offset_top = 59.0
+offset_right = -146.0
+offset_bottom = 59.0
 
 [node name="HealthBar" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("9_wn55x")]
 visible = false
@@ -145,5 +232,16 @@ label_settings = SubResource("LabelSettings_j25od")
 horizontal_alignment = 2
 autowrap_mode = 2
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Score"]
+libraries = {
+"": SubResource("AnimationLibrary_4ygy8")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0e85y")
+}
+
+[connection signal="change_gravity" from="Player" to="." method="_on_player_change_gravity"]
 [connection signal="just_hit" from="Player" to="." method="_on_player_just_hit"]
 [connection signal="pressed" from="CanvasLayer/Restart" to="." method="_on_restart_pressed"]

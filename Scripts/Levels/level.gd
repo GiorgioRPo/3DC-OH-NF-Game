@@ -3,6 +3,8 @@ extends Node2D
 @export var camera: Camera2D
 @export var player: Node2D
 @export var redflash: Control
+@export var obstacles: Node2D # A Node2D to manage all the obstacles
+@export var animation_player: AnimationPlayer # Manage Level Animations
 @export var cactus_obstacle_scene: PackedScene  # Assign your obstacle scene here
 @export var jump_pad_scene: PackedScene  # Assign your obstacle scene here
 
@@ -10,13 +12,17 @@ extends Node2D
 @export var spawn_max_interval: float = 3.0  # Maximum spawn interval (seconds)
 @export var score_label: Label  # Assign a Label node for displaying the score
 @export var high_score_label: Label  # Assign a Label node for displaying the high score
+@export var score_animation:AnimationPlayer # Assign an AnimationPlayer node for animating the score
 
 @export var is_flipped = false
+
+## Constants
+const GAME_SPEED_RAMP_UP:float = 0.05
 
 var high_score: int = 0
 var high_score_file: String = "user://high_score.save"
 
-var score: int = 0  # Player's score
+var score: float = 0  # Player's score
 
 # Node to house all the obstacles (and move them according to the speed)
 
@@ -28,13 +34,10 @@ var jumppad_spawn_timer: Timer
 var is_game_over = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_flip_game()
 	high_score = _load_high_score()
 	Global.node_parent = self
 	score_label.global_position.x = (get_viewport_rect().size / 2)[0] + 500
 	score_label.global_position.y = 0
-	var obstacle = cactus_obstacle_scene.instantiate()
-	add_child(obstacle)
 	
 	# Setup the spawn timer
 	cactus_spawn_timer = Timer.new()
@@ -52,7 +55,10 @@ func _ready() -> void:
 
 func _flip_game():
 	is_flipped = !is_flipped
-	self.scale.y = -self.scale.y
+	if is_flipped:
+		animation_player.play("flip_game")
+	else:
+		animation_player.play_backwards("flip_game")
 
 func _save_high_score(score: int) -> void:
 	var file = FileAccess.open(high_score_file, FileAccess.ModeFlags.WRITE)
@@ -73,23 +79,29 @@ func _load_high_score() -> int:
 
 func _process(delta: float) -> void:
 	if not is_game_over:
-		# Update score
-		score += int(delta * 150)
+		# Update score (in float)
+		score += delta * 150
 
 		# Increase game_speed every 1000 score
 		if score - last_speed_increase_score >= 1000:
-			game_speed += 0.1
-			last_speed_increase_score = score
+			game_speed += GAME_SPEED_RAMP_UP
+			Audio.play("point")
+			last_speed_increase_score = int(score/1000)*1000 # Ensures that it is rounded to the nearest thousand
+			score_animation.play("speed_up")
 			print("Game speed increased to ", game_speed)
 	else:
 		cactus_spawn_timer.stop()
 		$Floor.material.set_shader_parameter("speed", Vector2(0, 0))
 		if score > high_score:
-			high_score = score
+			high_score = int(score)
 			_save_high_score(high_score)
 
 	if score_label:
-		score_label.text = str(score).pad_zeros(6)
+		### If the score is blinking, then display the last increase score only
+		if score_animation.is_playing():
+			score_label.text = str(int(last_speed_increase_score)).pad_zeros(6)
+		else:
+			score_label.text = str(int(score)).pad_zeros(6)
 	else:
 		print("Score Label is not assigned or does not exist!")
 	
@@ -115,8 +127,8 @@ func _spawn_cactus_obstacle() -> void:
 		return
 	
 	var obstacle = cactus_obstacle_scene.instantiate()
-	obstacle.global_position = Vector2(1000, randf_range(200, 400))  # Spawn at a random height
-	add_child(obstacle)
+	obstacle.position = Vector2(1000, 27)  # Spawn at a relative position of 27 (27 is a tested value)
+	obstacles.add_child(obstacle) # Adds as a child of obstacles node
 
 # Called when the spawn timer times out
 func _on_cactus_spawn_timer_timeout() -> void:
@@ -130,11 +142,15 @@ func _spawn_jumppad_obstacle() -> void:
 		return
 	
 	var obstacle = jump_pad_scene.instantiate()
-	obstacle.global_position = Vector2(1000, randf_range(200, 400))  # Spawn at a random height
-	add_child(obstacle)
+	obstacle.position = Vector2(1000, randf_range(0, -200))  # Spawn at a random relative height
+	obstacles.add_child(obstacle) # Adds as a child of obstacles node
 
 # Called when the spawn timer times out
 func _on_jumppad_spawn_timer_timeout() -> void:
 	_spawn_jumppad_obstacle()
 	# Restart the timer with a random interval
 	jumppad_spawn_timer.start(randf_range(2.0, 8.0))
+
+
+func _on_player_change_gravity() -> void:
+	_flip_game()

@@ -1,5 +1,9 @@
-RayCast2D
+CPUParticles2D
+AnimationPlayer
+AnimationTree
 Node2D
+PointLight2D
+RayCast2D
 Label
 TextureButton
 Area2D
@@ -9,6 +13,3 @@ Camera2D
 AnimatedSprite2D
 TileMap
 StaticBody2D
-TextureRect
-GridContainer
-CanvasLayer

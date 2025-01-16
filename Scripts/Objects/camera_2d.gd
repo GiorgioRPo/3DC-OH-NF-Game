@@ -16,7 +16,7 @@ extends Camera2D
 # Used for later when needing to incorporate different themes,
 # possibly playing with camera movement
 # 0: Idle, 1: Follow
-var camera_mode:int = 0
+@export var camera_mode:int = 0
 
 # Camera Shake Stuff
 var magnitude:float = 0
@@ -36,9 +36,9 @@ func _physics_process(delta) -> void:
 			var spd = min(cam_len*2, max_speed) + 1 if cam_len < 300 else cam_len*3
 			var cam_dir = (ply_pos-cam_pos).normalized()
 			global_position += delta*spd*cam_dir
-			
-			global_position.x = clamp(global_position.x, -boundaries.x, boundaries.x)
-			global_position.y = clamp(global_position.y, -boundaries.y, boundaries.y)
+			global_position = ply_pos
+			#global_position.x = clamp(global_position.x, -boundaries.x, boundaries.x)
+			#global_position.y = clamp(global_position.y, -boundaries.y, boundaries.y)
 			
 			
 			var target_offset = (get_global_mouse_position() - cam_pos)* mouse_distance

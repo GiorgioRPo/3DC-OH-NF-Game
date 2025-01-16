@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var max_speed:int = 200
 @export var acceleration:float = 8
 @export var max_health:int = 100
-@export var down_speed:int = 5000
+@export var down_speed:int = 7500
 var raycast: RayCast2D
 # Movement Variables
 var dir := Vector2.ZERO
@@ -27,6 +27,7 @@ var health:int = 100
 var dead:bool = false
 
 signal just_hit
+signal change_gravity
 
 func _ready() -> void:
 	# Sets Important Variable Values
@@ -56,8 +57,7 @@ func _physics_process(delta: float)  -> void:
 	# Handles cases for disabling process
 	if dead: return
 		# Example usage in physics process
-	var is_flipped = get_parent().is_flipped  # Assuming this determines flipping
-	
+	var gravity_direction = sign(get_parent().scale.y) # Either -1,0 or 1, representing the direction of gravity to make smooth gravity change
 		
 	# Handles Direction and Player Input
 	var target_dir = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
@@ -72,7 +72,7 @@ func _physics_process(delta: float)  -> void:
 	# Logic when in air
 
 	if is_on_custom_floor():
-		print("Player is on the floor.")
+		#print("Player is on the floor.")
 		if holding_down:
 			set_hitboxes(1)
 			$Sprite.animation = "duck"
@@ -82,28 +82,22 @@ func _physics_process(delta: float)  -> void:
 		jump_duration = 0
 		velocity.y = 0
 	else:
-		print("Player is in the air.")
+		#print("Player is in the air.")
 		set_hitboxes(0)
 		$Sprite.animation = "jump"
-		if get_parent().is_flipped == true:
-			velocity.y += gravity * delta
-			if holding_down:
-				velocity.y += -delta * down_speed
-		else:
-			velocity.y += -gravity * delta
-			if holding_down:
-				velocity.y += delta * down_speed
+		velocity.y += -gravity * delta * gravity_direction
+		if holding_down:
+			velocity.y += delta * down_speed * gravity_direction
 		jump_duration += delta
 	
 	if Input.is_action_pressed("jump"):
 		if jump_duration < hold_jump_length and can_jump and !holding_down:
-			if get_parent().is_flipped == true:
-				velocity.y = -jump_force
-			else:
-				velocity.y = jump_force
+			velocity.y = jump_force * gravity_direction
+			
+			if !holding_jump:
+				Audio.play("jump")
 		else:
 			can_jump = false
-		
 		holding_jump = true
 	else:
 		holding_jump = false
@@ -119,6 +113,13 @@ func hit(dmg:int):
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	$Sprite.play("die")
-	just_hit.emit()
-	dead = true
+	## Check obstacles.gd script to view obstacle ids and description
+	var id = area.get_parent().obstacle_id
+	if id == "cactus":
+		$Sprite.play("die")
+		just_hit.emit()
+		dead = true
+		Audio.play("die")
+	elif id == "jump_pad":
+		change_gravity.emit()
+		Audio.play("gravity")
