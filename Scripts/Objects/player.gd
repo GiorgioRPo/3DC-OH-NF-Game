@@ -5,14 +5,14 @@ extends CharacterBody2D
 @export var acceleration:float = 8
 @export var max_health:int = 100
 @export var down_speed:int = 5000
-
+var raycast: RayCast2D
 # Movement Variables
 var dir := Vector2.ZERO
 var speed:float = 200
 
 # Jump Variables
 var jump_force:float = -1000
-var gravity:float = 5000
+var gravity:float = -5000
 var jump_duration:float = 0
 const hold_jump_length:float = 0.1
 var holding_jump:bool = false
@@ -33,6 +33,13 @@ func _ready() -> void:
 	Global.player = self
 	speed = max_speed
 	health = max_health
+	raycast = $RayCast2D
+
+
+func is_on_custom_floor() -> bool:
+	# Check if the RayCast2D is colliding
+	return raycast.is_colliding()
+
 
 func set_hitboxes(mode:int=0):
 	# mode --> 0: stand, 1: duck
@@ -45,31 +52,27 @@ func set_hitboxes(mode:int=0):
 		$Hitbox/StandHead.disabled = true
 		$Hitbox/Duck.disabled = false
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float)  -> void:
 	# Handles cases for disabling process
 	if dead: return
+		# Example usage in physics process
+	var is_flipped = get_parent().is_flipped  # Assuming this determines flipping
 	
+		
 	# Handles Direction and Player Input
 	var target_dir = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
 	dir = dir.move_toward(target_dir, delta*acceleration)
 	
 	# Ducking Logic
 	if Input.is_action_pressed("down"):
-		
 		holding_down = true
 	else:
 		holding_down = false
 	
 	# Logic when in air
-	if not is_on_floor():
-		set_hitboxes(0)
-		$Sprite.animation = "jump"
-		velocity.y += gravity * delta
-		if holding_down:
-			velocity.y += delta * down_speed
-		jump_duration += delta
-	# Logic when touching ground
-	else:
+
+	if is_on_custom_floor():
+		print("Player is on the floor.")
 		if holding_down:
 			set_hitboxes(1)
 			$Sprite.animation = "duck"
@@ -78,11 +81,26 @@ func _physics_process(delta: float) -> void:
 			$Sprite.animation = "run"
 		jump_duration = 0
 		velocity.y = 0
-	
+	else:
+		print("Player is in the air.")
+		set_hitboxes(0)
+		$Sprite.animation = "jump"
+		if get_parent().is_flipped == true:
+			velocity.y += gravity * delta
+			if holding_down:
+				velocity.y += -delta * down_speed
+		else:
+			velocity.y += -gravity * delta
+			if holding_down:
+				velocity.y += delta * down_speed
+		jump_duration += delta
 	
 	if Input.is_action_pressed("jump"):
 		if jump_duration < hold_jump_length and can_jump and !holding_down:
-			velocity.y = jump_force
+			if get_parent().is_flipped == true:
+				velocity.y = -jump_force
+			else:
+				velocity.y = jump_force
 		else:
 			can_jump = false
 		

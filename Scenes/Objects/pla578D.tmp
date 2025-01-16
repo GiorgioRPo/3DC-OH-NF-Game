@@ -110,9 +110,6 @@ shape = SubResource("RectangleShape2D_qwlbn")
 disabled = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(0, -1)
-target_position = Vector2(0, 57)
-hit_from_inside = true
-collide_with_areas = true
+target_position = Vector2(0, 52)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

@@ -24,6 +24,7 @@ var timeleft:float = 0
 var is_shaking:bool = false
 
 func _ready() -> void:
+	rotation_degrees = 180
 	Global.camera = self
 
 func _physics_process(delta) -> void:

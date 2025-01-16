@@ -80,6 +80,10 @@ size = Vector2(110, 52)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_lvxql")
+max_speed = null
+acceleration = null
+max_health = null
+down_speed = null
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nsgoo")
@@ -110,9 +114,6 @@ shape = SubResource("RectangleShape2D_qwlbn")
 disabled = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(0, -1)
-target_position = Vector2(0, 57)
-hit_from_inside = true
-collide_with_areas = true
+target_position = Vector2(0, 52)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

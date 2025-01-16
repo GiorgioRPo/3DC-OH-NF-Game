@@ -1,3 +1,4 @@
+RayCast2D
 Node2D
 Label
 TextureButton
@@ -11,4 +12,3 @@ StaticBody2D
 TextureRect
 GridContainer
 CanvasLayer
-CharacterBody2D

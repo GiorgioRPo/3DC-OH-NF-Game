@@ -15,13 +15,13 @@
 [ext_resource type="Texture2D" uid="uid://cg5qmsh4imexf" path="res://Sprites/Google Chrome Dino SpriteSheet.png" id="12_0l358"]
 [ext_resource type="Texture2D" uid="uid://uscpvpca3tmf" path="res://Sprites/UI/Restart Button.png" id="13_x3e7g"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dto6u"]
-size = Vector2(1673, 34)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_04eeu"]
 resource_local_to_scene = true
 shader = ExtResource("10_qedjt")
 shader_parameter/speed = Vector2(0.2, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dto6u"]
+size = Vector2(1673, 34)
 
 [sub_resource type="SystemFont" id="SystemFont_8bqwy"]
 font_weight = 550
@@ -49,16 +49,6 @@ jump_pad_scene = ExtResource("3_ah4qt")
 score_label = NodePath("CanvasLayer/Score")
 high_score_label = NodePath("CanvasLayer/Score/HighScore")
 
-[node name="PlaceHolder (Delete This)" type="Sprite2D" parent="."]
-position = Vector2(-551, -142)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="PlaceHolder (Delete This)"]
-position = Vector2(1040, 679)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceHolder (Delete This)/StaticBody2D"]
-position = Vector2(-477.5, -444)
-shape = SubResource("RectangleShape2D_dto6u")
-
 [node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_0jc4h")]
 player = NodePath("../Player")
 
@@ -69,6 +59,13 @@ position = Vector2(0, 64)
 texture = ExtResource("12_0l358")
 region_enabled = true
 region_rect = Rect2(0, 100, 2404, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor"]
+position = Vector2(489, 473)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D"]
+position = Vector2(-477.5, -444)
+shape = SubResource("RectangleShape2D_dto6u")
 
 [node name="Player" parent="." instance=ExtResource("2_i5rbt")]
 position = Vector2(-527, -4)

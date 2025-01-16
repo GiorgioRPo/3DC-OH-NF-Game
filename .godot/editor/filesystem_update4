@@ -1,8 +1,7 @@
-res://Scenes/Objects/player.tscn
-res://Resources/Shaders/scroll.gdshader
 res://Scenes/Levels/level.tscn
-res://Scenes/Objects/Obstacles/cactus_obstacle.tscn
-res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.tscn
+res://Resources/Shaders/scroll.gdshader
 res://Scripts/Levels/level.gd
+res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.tscn
 res://Scenes/Objects/Obstacles/Jump Pad/jump_pad_obstacle.tscn
+res://Scenes/Objects/player.tscn
 res://Scripts/Objects/player.gd

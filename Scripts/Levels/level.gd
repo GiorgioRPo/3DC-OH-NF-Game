@@ -11,6 +11,8 @@ extends Node2D
 @export var score_label: Label  # Assign a Label node for displaying the score
 @export var high_score_label: Label  # Assign a Label node for displaying the high score
 
+@export var is_flipped = false
+
 var high_score: int = 0
 var high_score_file: String = "user://high_score.save"
 
@@ -26,6 +28,7 @@ var jumppad_spawn_timer: Timer
 var is_game_over = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	_flip_game()
 	high_score = _load_high_score()
 	Global.node_parent = self
 	score_label.global_position.x = (get_viewport_rect().size / 2)[0] + 500
@@ -46,6 +49,10 @@ func _ready() -> void:
 	jumppad_spawn_timer.one_shot = true  # Ensures it stops after each timeout
 	jumppad_spawn_timer.timeout.connect(self._on_jumppad_spawn_timer_timeout)  # Connect timeout signal
 	jumppad_spawn_timer.start(randf_range(2.0, 8.0))  # Start the first spawn cycle
+
+func _flip_game():
+	is_flipped = !is_flipped
+	self.scale.y = -self.scale.y
 
 func _save_high_score(score: int) -> void:
 	var file = FileAccess.open(high_score_file, FileAccess.ModeFlags.WRITE)

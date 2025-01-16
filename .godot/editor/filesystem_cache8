@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1736761976
+::res://::1736993892
 icon.svg::CompressedTexture2D::8728929445595649767::1735881308::1736759674::1::::<><>::
 README.md::TextFile::-1::1735881308::0::1::::<><>::
 ::res://Audio/::1736759675
@@ -8,29 +8,28 @@ hover.wav::AudioStreamWAV::6461609905906622378::1735881308::1736759675::1::::<><
 ::res://Fonts/::1736759674
 test.ttf::FontFile::3705340456107585131::1735881308::1736759674::1::::<><>::
 ::res://Resources/::1736127468
-::res://Resources/Shaders/::1736761361
-scroll.gdshader::Shader::-1::1736761361::0::1::::<><>::
+::res://Resources/Shaders/::1736993881
+scroll.gdshader::Shader::-1::1736993881::0::1::::<><>::
 ::res://Scenes/::1736067668
 AudioHandler.tscn::PackedScene::6930083901291505883::1735959907::0::1::::<><>::res://Scripts/audio_handler.gd
 AudioNode.tscn::PackedScene::4063636132783234408::1735959907::0::1::::<><>::uid://cgnv3cfwvtb8a::::res://Audio/click.wav<>res://Scripts/audio_node.gd
-::res://Scenes/Levels/::1736761361
-level.tscn::PackedScene::3359766638220335711::1736761361::0::1::::<><>::res://Scripts/Levels/level.gd<>uid://4jm41curqcp0::::res://Scenes/Objects/player.tscn<>uid://bdj6gftn4smd7::::res://Scenes/UI/pause_button.tscn<>uid://c1wqsr211losi::::res://Scenes/Levels/main_menu.tscn<>uid://bvwfbqlt6n7bo::::res://Scenes/Levels/settings.tscn<>uid://vprsm62rpujb::::res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.tscn<>uid://bc7pmn6214ho8::::res://Scenes/Levels/paused.tscn<>uid://c2k5dfsj2yv7l::::res://Scenes/Objects/camera_2d.tscn<>uid://6w722ltf84gs::::res://Scenes/UI/red_flash.tscn<>uid://dd1fvp6pte6vp::::res://Scenes/UI/health_bar.tscn<>res://Resources/Shaders/scroll.gdshader<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png<>uid://uscpvpca3tmf::::res://Sprites/UI/Restart Button.png
+::res://Scenes/Levels/::1736993825
+level.tscn::PackedScene::3359766638220335711::1736993825::0::1::::<><>::res://Scripts/Levels/level.gd<>uid://4jm41curqcp0::::res://Scenes/Objects/player.tscn<>uid://3gise583pwpc::::res://Scenes/Objects/Obstacles/Jump Pad/jump_pad_obstacle.tscn<>uid://bdj6gftn4smd7::::res://Scenes/UI/pause_button.tscn<>uid://c1wqsr211losi::::res://Scenes/Levels/main_menu.tscn<>uid://bvwfbqlt6n7bo::::res://Scenes/Levels/settings.tscn<>uid://vprsm62rpujb::::res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.tscn<>uid://bc7pmn6214ho8::::res://Scenes/Levels/paused.tscn<>uid://c2k5dfsj2yv7l::::res://Scenes/Objects/camera_2d.tscn<>uid://6w722ltf84gs::::res://Scenes/UI/red_flash.tscn<>uid://dd1fvp6pte6vp::::res://Scenes/UI/health_bar.tscn<>res://Resources/Shaders/scroll.gdshader<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png<>uid://uscpvpca3tmf::::res://Sprites/UI/Restart Button.png
 main_menu.tscn::PackedScene::6644172164562097308::1736127612::0::1::::<><>::res://Scripts/Levels/main_menu.gd<>uid://bs15oe3x0itwd::::res://Fonts/test.ttf<>uid://gpyo8xrl20b8::::res://Scenes/UI/text_button.tscn
 paused.tscn::PackedScene::2593791375472572737::1736127612::0::1::::<><>::res://Scripts/Levels/paused.gd<>uid://bs15oe3x0itwd::::res://Fonts/test.ttf<>uid://gpyo8xrl20b8::::res://Scenes/UI/text_button.tscn
 settings.tscn::PackedScene::3906108939710531752::1735959907::0::1::::<><>::res://Scripts/Levels/settings.gd<>uid://bs15oe3x0itwd::::res://Fonts/test.ttf<>uid://dk45kwc4vbwtv::::res://Sprites/UI/SliderGrabber.png<>uid://gpyo8xrl20b8::::res://Scenes/UI/text_button.tscn
 tile_map.tscn::PackedScene::1489875558969271757::1736127445::0::1::::<><>::uid://bc3c0l2no8fyu::::res://Sprites/Terrain (16x16).png<>uid://51vf0e2b36lc::::res://Sprites/StoneTiles.png
-::res://Scenes/Objects/::1736761361
+::res://Scenes/Objects/::1736993805
 bullet.tscn::PackedScene::2280088545343313456::1735960037::0::1::::<><>::uid://dk45kwc4vbwtv::::res://Sprites/UI/SliderGrabber.png<>res://Scripts/Objects/bullet.gd
 camera_2d.tscn::PackedScene::6690411081187581615::1735959907::0::1::::<><>::res://Scripts/Objects/camera_2d.gd
-player.tscn::PackedScene::2054837626854687151::1736761361::0::1::::<><>::res://Scripts/Objects/player.gd<>uid://xn8eq6mhn8o::::res://Sprites/DinoWalk.png<>uid://bndt2l82maxqq::::res://Sprites/DinoDuck.png
+player.tscn::PackedScene::2054837626854687151::1736993805::0::1::::<><>::res://Scripts/Objects/player.gd<>uid://xn8eq6mhn8o::::res://Sprites/DinoWalk.png<>uid://bndt2l82maxqq::::res://Sprites/DinoDuck.png
 ::res://Scenes/Objects/Obstacles/::1736761968
-::res://Scenes/Objects/Obstacles/Cactus/::1736761361
-cactus_obstacle.gd::GDScript::-1::1736741080::0::1::::<>Node2D<>::
-cactus_obstacle.tscn::PackedScene::1505996395296120491::1736761361::0::1::::<><>::res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png
-::res://Scenes/Objects/Obstacles/Jump Pad/::1736761976
-cactus_obstacle.tscn::PackedScene::4488527227199344536::1736761968::0::1::::<><>::res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png
+::res://Scenes/Objects/Obstacles/Cactus/::1736993805
+cactus_obstacle.gd::GDScript::-1::1736785858::0::1::::<>Node2D<>::
+cactus_obstacle.tscn::PackedScene::1505996395296120491::1736993805::0::1::::<><>::res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png
+::res://Scenes/Objects/Obstacles/Jump Pad/::1736993863
 jump_pad_obstacle.gd::GDScript::-1::1736761968::0::1::::<>Node2D<>::
-jump_pad_obstacle.tscn::PackedScene::1978192026596620208::1736761984::0::1::::<><>::res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png
+jump_pad_obstacle.tscn::PackedScene::1978192026596620208::1736993863::0::1::::<><>::res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png
 ::res://Scenes/UI/::1736352525
 health_bar.tscn::PackedScene::7423844326681094213::1735959907::0::1::::<><>::uid://bgwun21dsj6on::::res://Sprites/UI/HealthBar/HealthBarBack.png<>res://Scripts/UI/health_bar.gd<>uid://xm2campb8iw::::res://Sprites/UI/HealthBar/HealthBarWhite.png<>uid://cqq4eu1myya7v::::res://Sprites/UI/HealthBar/HealthBar.png<>uid://45fdu5bixnhi::::res://Sprites/UI/HealthBar/HealthBarFront.png
 pause_button.tscn::PackedScene::2617459848531096310::1736352525::0::1::::<><>::uid://k03u1a34eu1n::::res://Sprites/UI/Pause.png<>uid://ckx6wxx5anajc::::res://Sprites/UI/Pause_P.png<>uid://dhxg4s50ac164::::res://Sprites/UI/Pause_H.png<>res://Scripts/UI/pause_button.gd
@@ -40,15 +39,15 @@ text_button.tscn::PackedScene::453582706669403023::1735959907::0::1::::<><>::uid
 audio_handler.gd::GDScript::-1::1735881308::0::1::::<>Node<>::
 audio_node.gd::GDScript::-1::1735881308::0::1::::<>AudioStreamPlayer<>::
 Global.gd::GDScript::-1::1735881308::0::1::::<>Node<>::
-::res://Scripts/Levels/::1736741080
-level.gd::GDScript::-1::1736741080::0::1::::<>Node2D<>::
+::res://Scripts/Levels/::1736993827
+level.gd::GDScript::-1::1736993827::0::1::::<>Node2D<>::
 main_menu.gd::GDScript::-1::1735881308::0::1::::<>Control<>::
 paused.gd::GDScript::-1::1735881308::0::1::::<>Control<>::
 settings.gd::GDScript::-1::1735881308::0::1::::<>Control<>::
-::res://Scripts/Objects/::1736127445
+::res://Scripts/Objects/::1736993686
 bullet.gd::GDScript::-1::1735881308::0::1::::<>Node2D<>::
-camera_2d.gd::GDScript::-1::1736127445::0::1::::<>Camera2D<>::
-player.gd::GDScript::-1::1736127445::0::1::::<>CharacterBody2D<>::
+camera_2d.gd::GDScript::-1::1736787028::0::1::::<>Camera2D<>::
+player.gd::GDScript::-1::1736993686::0::1::::<>CharacterBody2D<>::
 ::res://Scripts/UI/::1735881350
 health_bar.gd::GDScript::-1::1735881308::0::1::::<>TextureRect<>::
 pause_button.gd::GDScript::-1::1735881308::0::1::::<>TextureButton<>::
