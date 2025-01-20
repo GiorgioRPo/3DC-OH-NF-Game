@@ -13,7 +13,7 @@ size = Vector2(6, 21.5625)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_meoc8")
 region_enabled = true
-region_rect = Rect2(446, 0, 34, 74)
+region_rect = Rect2(616, 0, 34, 74)
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 4
