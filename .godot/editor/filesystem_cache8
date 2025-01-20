@@ -1,6 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ::res://::1736096054
 icon.svg::CompressedTexture2D::8728929445595649767::1728632783::1736089952::1::::<><>::
 README.md::TextFile::-1::1735834481::0::1::::<><>::
@@ -61,10 +62,33 @@ AudioNode.tscn::PackedScene::4063636132783234408::1735996339::0::1::::<><>::uid:
 ::res://Scenes/Levels/::1737401744
 level.tscn::PackedScene::3359766638220335711::1737401744::0::1::::<><>::res://Scripts/Levels/level.gd<>uid://4jm41curqcp0::::res://Scenes/Objects/player.tscn<>uid://3gise583pwpc::::res://Scenes/Objects/Obstacles/Jump Pad/jump_pad_obstacle.tscn<>uid://y76hp8wutpi4::::res://Scenes/Objects/Obstacles/Cactus/cactus_2.tscn<>uid://bdj6gftn4smd7::::res://Scenes/UI/pause_button.tscn<>uid://c1wqsr211losi::::res://Scenes/Levels/main_menu.tscn<>uid://duuh52qbrqsis::::res://Scenes/Objects/Obstacles/Cactus/cactus_3.tscn<>uid://bvwfbqlt6n7bo::::res://Scenes/Levels/settings.tscn<>uid://vprsm62rpujb::::res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.tscn<>uid://bc7pmn6214ho8::::res://Scenes/Levels/paused.tscn<>uid://c2k5dfsj2yv7l::::res://Scenes/Objects/camera_2d.tscn<>uid://6w722ltf84gs::::res://Scenes/UI/red_flash.tscn<>uid://dd1fvp6pte6vp::::res://Scenes/UI/health_bar.tscn<>res://Resources/Shaders/scroll.gdshader<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png<>uid://uscpvpca3tmf::::res://Sprites/UI/Restart Button.png
 >>>>>>> Stashed changes
+=======
+::res://::1737400177
+icon.svg::CompressedTexture2D::8728929445595649767::1728632783::1737021856::1::::<><>::
+README.md::TextFile::-1::1735834481::0::1::::<><>::
+::res://Audio/::1737391720
+click.wav::AudioStreamWAV::5222136512893720142::1728640101::1737021856::1::::<><>::
+die.wav::AudioStreamWAV::3258025981711922525::1737029857::1737385278::1::::<><>::
+gravity.wav::AudioStreamWAV::3111446685808667623::1737391719::1737391720::1::::<><>::
+hover.wav::AudioStreamWAV::6461609905906622378::1728639904::1737021856::1::::<><>::
+jump.wav::AudioStreamWAV::6171607215603203546::1737029857::1737385278::1::::<><>::
+point.wav::AudioStreamWAV::3029199593955497944::1737029857::1737385278::1::::<><>::
+::res://Fonts/::1737021856
+test.ttf::FontFile::3705340456107585131::1707073889::1737021856::1::::<><>::
+::res://Resources/::1736094370
+::res://Resources/Shaders/::1737401744
+scroll.gdshader::Shader::-1::1737401744::0::1::::<><>::
+::res://Scenes/::1735996339
+AudioHandler.tscn::PackedScene::6930083901291505883::1735996339::0::1::::<><>::res://Scripts/audio_handler.gd
+AudioNode.tscn::PackedScene::4063636132783234408::1735996339::0::1::::<><>::uid://cgnv3cfwvtb8a::::res://Audio/click.wav<>res://Scripts/audio_node.gd
+::res://Scenes/Levels/::1737401744
+level.tscn::PackedScene::3359766638220335711::1737401744::0::1::::<><>::res://Scripts/Levels/level.gd<>uid://4jm41curqcp0::::res://Scenes/Objects/player.tscn<>uid://3gise583pwpc::::res://Scenes/Objects/Obstacles/Jump Pad/jump_pad_obstacle.tscn<>uid://y76hp8wutpi4::::res://Scenes/Objects/Obstacles/Cactus/cactus_2.tscn<>uid://bdj6gftn4smd7::::res://Scenes/UI/pause_button.tscn<>uid://c1wqsr211losi::::res://Scenes/Levels/main_menu.tscn<>uid://duuh52qbrqsis::::res://Scenes/Objects/Obstacles/Cactus/cactus_3.tscn<>uid://bvwfbqlt6n7bo::::res://Scenes/Levels/settings.tscn<>uid://vprsm62rpujb::::res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.tscn<>uid://bc7pmn6214ho8::::res://Scenes/Levels/paused.tscn<>uid://c2k5dfsj2yv7l::::res://Scenes/Objects/camera_2d.tscn<>uid://6w722ltf84gs::::res://Scenes/UI/red_flash.tscn<>uid://dd1fvp6pte6vp::::res://Scenes/UI/health_bar.tscn<>res://Resources/Shaders/scroll.gdshader<>uid://cg5qmsh4imexf::::res://Sprites/Google Chrome Dino SpriteSheet.png<>uid://uscpvpca3tmf::::res://Sprites/UI/Restart Button.png
+>>>>>>> Stashed changes
 main_menu.tscn::PackedScene::6644172164562097308::1735996956::0::1::::<><>::res://Scripts/Levels/main_menu.gd<>uid://bs15oe3x0itwd::::res://Fonts/test.ttf<>uid://gpyo8xrl20b8::::res://Scenes/UI/text_button.tscn
 paused.tscn::PackedScene::2593791375472572737::1735996956::0::1::::<><>::res://Scripts/Levels/paused.gd<>uid://bs15oe3x0itwd::::res://Fonts/test.ttf<>uid://gpyo8xrl20b8::::res://Scenes/UI/text_button.tscn
 settings.tscn::PackedScene::3906108939710531752::1735996956::0::1::::<><>::res://Scripts/Levels/settings.gd<>uid://bs15oe3x0itwd::::res://Fonts/test.ttf<>uid://dk45kwc4vbwtv::::res://Sprites/UI/SliderGrabber.png<>uid://gpyo8xrl20b8::::res://Scenes/UI/text_button.tscn
 tile_map.tscn::PackedScene::1489875558969271757::1736094050::0::1::::<><>::uid://bc3c0l2no8fyu::::res://Sprites/Terrain (16x16).png<>uid://51vf0e2b36lc::::res://Sprites/StoneTiles.png
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 ::res://Scenes/Objects/::1736096107
@@ -78,6 +102,11 @@ obstacle.tscn::PackedScene::1505996395296120491::1736096108::0::1::::<><>::uid:/
 ::res://Scenes/Objects/::1737401744
 bullet.tscn::PackedScene::2280088545343313456::1735996339::0::1::::<><>::uid://dk45kwc4vbwtv::::res://Sprites/UI/SliderGrabber.png<>res://Scripts/Objects/bullet.gd
 camera_2d.tscn::PackedScene::6690411081187581615::1735996339::0::1::::<><>::res://Scripts/Objects/camera_2d.gd
+=======
+::res://Scenes/Objects/::1737401744
+bullet.tscn::PackedScene::2280088545343313456::1735996339::0::1::::<><>::uid://dk45kwc4vbwtv::::res://Sprites/UI/SliderGrabber.png<>res://Scripts/Objects/bullet.gd
+camera_2d.tscn::PackedScene::6690411081187581615::1735996339::0::1::::<><>::res://Scripts/Objects/camera_2d.gd
+>>>>>>> Stashed changes
 =======
 ::res://Scenes/Objects/::1737401744
 bullet.tscn::PackedScene::2280088545343313456::1735996339::0::1::::<><>::uid://dk45kwc4vbwtv::::res://Sprites/UI/SliderGrabber.png<>res://Scripts/Objects/bullet.gd
@@ -108,6 +137,7 @@ audio_node.gd::GDScript::-1::1735996331::0::1::::<>AudioStreamPlayer<>::
 Global.gd::GDScript::-1::1735996331::0::1::::<>Node<>::
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ::res://Scripts/Levels/::1736096089
 level.gd::GDScript::-1::1736096089::0::1::::<>Node2D<>::
 main_menu.gd::GDScript::-1::1735996331::0::1::::<>Control<>::
@@ -117,6 +147,18 @@ settings.gd::GDScript::-1::1735996331::0::1::::<>Control<>::
 bullet.gd::GDScript::-1::1735996331::0::1::::<>Node2D<>::
 camera_2d.gd::GDScript::-1::1736093474::0::1::::<>Camera2D<>::
 player.gd::GDScript::-1::1736096107::0::1::::<>CharacterBody2D<>::
+=======
+::res://Scripts/Levels/::1737401742
+level.gd::GDScript::-1::1737401742::0::1::::<>Node2D<>::
+main_menu.gd::GDScript::-1::1735996331::0::1::::<>Control<>::
+paused.gd::GDScript::-1::1735996331::0::1::::<>Control<>::
+settings.gd::GDScript::-1::1735996331::0::1::::<>Control<>::
+::res://Scripts/Objects/::1737029857
+bullet.gd::GDScript::-1::1735996331::0::1::::<>Node2D<>::
+camera_2d.gd::GDScript::-1::1737029857::0::1::::<>Camera2D<>::
+obstacles.gd::GDScript::-1::1737029857::0::1::::Obstacle<>Node2D<>::
+player.gd::GDScript::-1::1737029857::0::1::::<>CharacterBody2D<>::
+>>>>>>> Stashed changes
 =======
 ::res://Scripts/Levels/::1737401742
 level.gd::GDScript::-1::1737401742::0::1::::<>Node2D<>::
