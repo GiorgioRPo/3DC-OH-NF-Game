@@ -2,11 +2,14 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=16 format=3 uid="uid://bn4q4oybhoxd4"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/level.gd" id="1_e2dhp"]
 [ext_resource type="PackedScene" uid="uid://4jm41curqcp0" path="res://Scenes/Objects/player.tscn" id="2_i5rbt"]
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -22,6 +25,9 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -41,6 +47,9 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -214,6 +223,14 @@ position = Vector2(1902, 43)
 
 [node name="Obstacle3" parent="Obstacles" instance=ExtResource("5_gxrd1")]
 position = Vector2(2902, 43)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor/StaticBody2D"]
+position = Vector2(-1118, -739.5)
+shape = SubResource("RectangleShape2D_e4djv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor/StaticBody2D"]
+position = Vector2(152, -739)
+shape = SubResource("RectangleShape2D_e4djv")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor/StaticBody2D"]
 position = Vector2(-1118, -739.5)

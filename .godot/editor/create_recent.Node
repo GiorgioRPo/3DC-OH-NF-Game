@@ -2,7 +2,10 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -29,12 +32,15 @@ TileMap
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 StaticBody2D
 TextureRect
 GridContainer
 CanvasLayer
 CharacterBody2D
 Button
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
