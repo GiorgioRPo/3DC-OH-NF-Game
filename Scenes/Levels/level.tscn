@@ -1,26 +1,11 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=16 format=3 uid="uid://bn4q4oybhoxd4"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/level.gd" id="1_e2dhp"]
 [ext_resource type="PackedScene" uid="uid://4jm41curqcp0" path="res://Scenes/Objects/player.tscn" id="2_i5rbt"]
-=======
-[gd_scene load_steps=32 format=3 uid="uid://bn4q4oybhoxd4"]
-
-[ext_resource type="Script" path="res://Scripts/Levels/level.gd" id="1_e2dhp"]
-[ext_resource type="PackedScene" uid="uid://4jm41curqcp0" path="res://Scenes/Objects/player.tscn" id="2_i5rbt"]
-[ext_resource type="PackedScene" uid="uid://3gise583pwpc" path="res://Scenes/Objects/Obstacles/Jump Pad/jump_pad_obstacle.tscn" id="3_ah4qt"]
-[ext_resource type="PackedScene" uid="uid://y76hp8wutpi4" path="res://Scenes/Objects/Obstacles/Cactus/cactus_2.tscn" id="3_et7sx"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://bdj6gftn4smd7" path="res://Scenes/UI/pause_button.tscn" id="3_pacft"]
 [ext_resource type="PackedScene" uid="uid://c1wqsr211losi" path="res://Scenes/Levels/main_menu.tscn" id="3_qavb3"]
-[ext_resource type="PackedScene" uid="uid://duuh52qbrqsis" path="res://Scenes/Objects/Obstacles/Cactus/cactus_3.tscn" id="4_3nx3x"]
 [ext_resource type="PackedScene" uid="uid://bvwfbqlt6n7bo" path="res://Scenes/Levels/settings.tscn" id="4_c3cnt"]
-<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://vprsm62rpujb" path="res://Scenes/Objects/Obstacles/obstacle.tscn" id="5_gxrd1"]
-=======
-[ext_resource type="PackedScene" uid="uid://vprsm62rpujb" path="res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.tscn" id="5_gxrd1"]
-[ext_resource type="PackedScene" uid="uid://gdahhph36yob" path="res://Scenes/Objects/Obstacles/Cactus/bird.tscn" id="5_tlaal"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://bc7pmn6214ho8" path="res://Scenes/Levels/paused.tscn" id="6_pygct"]
 [ext_resource type="PackedScene" uid="uid://c2k5dfsj2yv7l" path="res://Scenes/Objects/camera_2d.tscn" id="7_0jc4h"]
 [ext_resource type="PackedScene" uid="uid://6w722ltf84gs" path="res://Scenes/UI/red_flash.tscn" id="9_f62e1"]
@@ -37,115 +22,11 @@ resource_local_to_scene = true
 shader = ExtResource("10_qedjt")
 shader_parameter/speed = Vector2(0.2, 0)
 
-<<<<<<< Updated upstream
 [node name="Level" type="Node2D" node_paths=PackedStringArray("camera", "player", "redflash")]
-=======
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dto6u"]
-size = Vector2(1673, 34)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4djv"]
-size = Vector2(28, 625)
-
-[sub_resource type="SystemFont" id="SystemFont_8bqwy"]
-font_weight = 550
-
-[sub_resource type="SystemFont" id="SystemFont_f3xmx"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_sej3g"]
-font = SubResource("SystemFont_f3xmx")
-font_size = 24
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="SystemFont" id="SystemFont_hryoq"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_j25od"]
-font = SubResource("SystemFont_hryoq")
-font_size = 24
-font_color = Color(0.362829, 0.362829, 0.362829, 1)
-
-[sub_resource type="Animation" id="Animation_7uhfg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_wjpse"]
-resource_name = "speed_up"
-length = 1.35
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.35, 0.6, 0.85, 1.1, 1.35),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ygy8"]
-_data = {
-"RESET": SubResource("Animation_7uhfg"),
-"speed_up": SubResource("Animation_wjpse")
-}
-
-[sub_resource type="Animation" id="Animation_qudem"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_4o2ca"]
-resource_name = "flip_game"
-length = 0.3
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.17, 0.3),
-"transitions": PackedFloat32Array(1, 0.0001, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 0.1), Vector2(1, -0.1), Vector2(1, -1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0e85y"]
-_data = {
-"RESET": SubResource("Animation_qudem"),
-"flip_game": SubResource("Animation_4o2ca")
-}
-
-[node name="Level" type="Node2D" node_paths=PackedStringArray("camera", "player", "redflash", "obstacles", "animation_player", "score_label", "high_score_label", "score_animation")]
->>>>>>> Stashed changes
 script = ExtResource("1_e2dhp")
 camera = NodePath("Camera2D")
 player = NodePath("Player")
 redflash = NodePath("CanvasLayer/RedFlash")
-<<<<<<< Updated upstream
 
 [node name="PlaceHolder (Delete This)" type="Sprite2D" parent="."]
 position = Vector2(-551, -142)
@@ -156,15 +37,6 @@ position = Vector2(1040, 679)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceHolder (Delete This)/StaticBody2D"]
 position = Vector2(-477.5, -444)
 shape = SubResource("RectangleShape2D_dto6u")
-=======
-obstacles = NodePath("Obstacles")
-animation_player = NodePath("AnimationPlayer")
-cactus_obstacle_scenes = Array[PackedScene]([ExtResource("5_gxrd1"), ExtResource("3_et7sx"), ExtResource("4_3nx3x"), ExtResource("5_tlaal")])
-jump_pad_scene = ExtResource("3_ah4qt")
-score_label = NodePath("CanvasLayer/Score")
-high_score_label = NodePath("CanvasLayer/Score/HighScore")
-score_animation = NodePath("CanvasLayer/Score/AnimationPlayer")
->>>>>>> Stashed changes
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_0jc4h")]
 player = NodePath("../Player")
@@ -187,14 +59,6 @@ position = Vector2(1902, 43)
 
 [node name="Obstacle3" parent="Obstacles" instance=ExtResource("5_gxrd1")]
 position = Vector2(2902, 43)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor/StaticBody2D"]
-position = Vector2(-1118, -739.5)
-shape = SubResource("RectangleShape2D_e4djv")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor/StaticBody2D"]
-position = Vector2(152, -739)
-shape = SubResource("RectangleShape2D_e4djv")
 
 [node name="Player" parent="." instance=ExtResource("2_i5rbt")]
 position = Vector2(-527, -4)

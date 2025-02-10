@@ -1,27 +1,14 @@
-<<<<<<< Updated upstream
-=======
-AnimationPlayer
-AnimatedSprite2D
-CPUParticles2D
-AnimationTree
-Node2D
-PointLight2D
-RayCast2D
-Label
->>>>>>> Stashed changes
 TextureButton
 Node2D
 Area2D
 CollisionShape2D
 Sprite2D
 Camera2D
+AnimatedSprite2D
 TileMap
-<<<<<<< Updated upstream
 StaticBody2D
 TextureRect
 GridContainer
 CanvasLayer
 CharacterBody2D
 Button
-=======
->>>>>>> Stashed changes

@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 res://Scenes/Objects/player.tscn
 res://Resources/Shaders/scroll.gdshader
 res://Scenes/UI/pause_button.tscn
@@ -6,19 +5,3 @@ res://Scenes/Levels/level.tscn
 res://Scenes/Objects/Obstacles/obstacle.tscn
 res://Scripts/Objects/player.gd
 res://Scripts/Levels/level.gd
-=======
-res://Scenes/Levels/level.tscn
-res://Resources/Shaders/scroll.gdshader
-res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.tscn
-res://Scenes/Objects/Obstacles/Cactus/cactus_2.tscn
-res://Scenes/Objects/Obstacles/Jump Pad/jump_pad_obstacle.tscn
-res://Scenes/Objects/player.tscn
-res://Scenes/Objects/Obstacles/Cactus/cactus_2.gd
-res://Scenes/Objects/Obstacles/Cactus/cactus_3.tscn
-res://Scenes/Objects/Obstacles/Cactus/cactus_3.gd
-res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd
-res://Scripts/Levels/level.gd
-res://Scenes/Objects/Obstacles/Cactus/bird.tscn
-res://Scenes/Objects/Obstacles/Cactus/bird.gd
-res://Scripts/Objects/obstacles.gd
->>>>>>> Stashed changes
