@@ -1,21 +1,15 @@
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 [gd_scene load_steps=16 format=3 uid="uid://bn4q4oybhoxd4"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/level.gd" id="1_e2dhp"]
 [ext_resource type="PackedScene" uid="uid://4jm41curqcp0" path="res://Scenes/Objects/player.tscn" id="2_i5rbt"]
 =======
-=======
->>>>>>> Stashed changes
 [gd_scene load_steps=32 format=3 uid="uid://bn4q4oybhoxd4"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/level.gd" id="1_e2dhp"]
 [ext_resource type="PackedScene" uid="uid://4jm41curqcp0" path="res://Scenes/Objects/player.tscn" id="2_i5rbt"]
 [ext_resource type="PackedScene" uid="uid://3gise583pwpc" path="res://Scenes/Objects/Obstacles/Jump Pad/jump_pad_obstacle.tscn" id="3_ah4qt"]
 [ext_resource type="PackedScene" uid="uid://y76hp8wutpi4" path="res://Scenes/Objects/Obstacles/Cactus/cactus_2.tscn" id="3_et7sx"]
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://bdj6gftn4smd7" path="res://Scenes/UI/pause_button.tscn" id="3_pacft"]
 [ext_resource type="PackedScene" uid="uid://c1wqsr211losi" path="res://Scenes/Levels/main_menu.tscn" id="3_qavb3"]
@@ -26,9 +20,6 @@
 =======
 [ext_resource type="PackedScene" uid="uid://vprsm62rpujb" path="res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.tscn" id="5_gxrd1"]
 [ext_resource type="PackedScene" uid="uid://gdahhph36yob" path="res://Scenes/Objects/Obstacles/Cactus/bird.tscn" id="5_tlaal"]
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://bc7pmn6214ho8" path="res://Scenes/Levels/paused.tscn" id="6_pygct"]
 [ext_resource type="PackedScene" uid="uid://c2k5dfsj2yv7l" path="res://Scenes/Objects/camera_2d.tscn" id="7_0jc4h"]
@@ -196,14 +187,6 @@ position = Vector2(1902, 43)
 
 [node name="Obstacle3" parent="Obstacles" instance=ExtResource("5_gxrd1")]
 position = Vector2(2902, 43)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor/StaticBody2D"]
-position = Vector2(-1118, -739.5)
-shape = SubResource("RectangleShape2D_e4djv")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor/StaticBody2D"]
-position = Vector2(152, -739)
-shape = SubResource("RectangleShape2D_e4djv")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor/StaticBody2D"]
 position = Vector2(-1118, -739.5)

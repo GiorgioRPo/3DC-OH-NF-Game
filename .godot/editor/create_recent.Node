@@ -1,8 +1,5 @@
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 =======
-=======
->>>>>>> Stashed changes
 AnimationPlayer
 AnimatedSprite2D
 CPUParticles2D
@@ -20,14 +17,11 @@ Sprite2D
 Camera2D
 TileMap
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 StaticBody2D
 TextureRect
 GridContainer
 CanvasLayer
 CharacterBody2D
 Button
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
