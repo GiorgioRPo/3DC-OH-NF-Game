@@ -1,7 +1,0 @@
-res://Scenes/Objects/player.tscn
-res://Resources/Shaders/scroll.gdshader
-res://Scenes/UI/pause_button.tscn
-res://Scenes/Levels/level.tscn
-res://Scenes/Objects/Obstacles/obstacle.tscn
-res://Scripts/Objects/player.gd
-res://Scripts/Levels/level.gd
