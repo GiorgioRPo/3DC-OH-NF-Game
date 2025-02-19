@@ -1,0 +1,15 @@
+CPUParticles2D
+AnimationPlayer
+AnimationTree
+Node2D
+PointLight2D
+RayCast2D
+Label
+TextureButton
+Area2D
+CollisionShape2D
+Sprite2D
+Camera2D
+AnimatedSprite2D
+TileMap
+StaticBody2D

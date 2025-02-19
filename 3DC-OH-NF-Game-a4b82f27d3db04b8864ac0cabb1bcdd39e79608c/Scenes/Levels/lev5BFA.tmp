@@ -1,0 +1,93 @@
+[gd_scene load_steps=16 format=3 uid="uid://bn4q4oybhoxd4"]
+
+[ext_resource type="Script" path="res://Scripts/Levels/level.gd" id="1_e2dhp"]
+[ext_resource type="PackedScene" uid="uid://4jm41curqcp0" path="res://Scenes/Objects/player.tscn" id="2_i5rbt"]
+[ext_resource type="PackedScene" uid="uid://bdj6gftn4smd7" path="res://Scenes/UI/pause_button.tscn" id="3_pacft"]
+[ext_resource type="PackedScene" uid="uid://c1wqsr211losi" path="res://Scenes/Levels/main_menu.tscn" id="3_qavb3"]
+[ext_resource type="PackedScene" uid="uid://bvwfbqlt6n7bo" path="res://Scenes/Levels/settings.tscn" id="4_c3cnt"]
+[ext_resource type="PackedScene" uid="uid://vprsm62rpujb" path="res://Scenes/Objects/Obstacles/cactus_obstacle.tscn" id="5_gxrd1"]
+[ext_resource type="PackedScene" uid="uid://bc7pmn6214ho8" path="res://Scenes/Levels/paused.tscn" id="6_pygct"]
+[ext_resource type="PackedScene" uid="uid://c2k5dfsj2yv7l" path="res://Scenes/Objects/camera_2d.tscn" id="7_0jc4h"]
+[ext_resource type="PackedScene" uid="uid://6w722ltf84gs" path="res://Scenes/UI/red_flash.tscn" id="9_f62e1"]
+[ext_resource type="PackedScene" uid="uid://dd1fvp6pte6vp" path="res://Scenes/UI/health_bar.tscn" id="9_wn55x"]
+[ext_resource type="Shader" path="res://Resources/Shaders/scroll.gdshader" id="10_qedjt"]
+[ext_resource type="Texture2D" uid="uid://cg5qmsh4imexf" path="res://Sprites/Google Chrome Dino SpriteSheet.png" id="12_0l358"]
+[ext_resource type="Texture2D" uid="uid://uscpvpca3tmf" path="res://Sprites/UI/Restart Button.png" id="13_x3e7g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dto6u"]
+size = Vector2(1673, 34)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_04eeu"]
+resource_local_to_scene = true
+shader = ExtResource("10_qedjt")
+shader_parameter/speed = Vector2(0.2, 0)
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("player", "redflash")]
+script = ExtResource("1_e2dhp")
+player = NodePath("Player")
+redflash = NodePath("CanvasLayer/RedFlash")
+cactus_obstacle_scene = ExtResource("5_gxrd1")
+
+[node name="PlaceHolder (Delete This)" type="Sprite2D" parent="."]
+position = Vector2(-551, -142)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PlaceHolder (Delete This)"]
+position = Vector2(1040, 679)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceHolder (Delete This)/StaticBody2D"]
+position = Vector2(-477.5, -444)
+shape = SubResource("RectangleShape2D_dto6u")
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_0jc4h")]
+player = NodePath("../Player")
+
+[node name="Floor" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_04eeu")
+position = Vector2(0, 64)
+texture = ExtResource("12_0l358")
+region_enabled = true
+region_rect = Rect2(0, 100, 2404, 32)
+
+[node name="Player" parent="." instance=ExtResource("2_i5rbt")]
+position = Vector2(-527, -4)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RedFlash" parent="CanvasLayer" instance=ExtResource("9_f62e1")]
+
+[node name="HealthBar" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("9_wn55x")]
+visible = false
+player = NodePath("../../Player")
+
+[node name="Pause" parent="CanvasLayer" node_paths=PackedStringArray("pause_screen") instance=ExtResource("3_pacft")]
+pause_screen = NodePath("../Paused")
+
+[node name="Paused" parent="CanvasLayer" node_paths=PackedStringArray("settings") instance=ExtResource("6_pygct")]
+visible = false
+settings = NodePath("../Settings")
+
+[node name="MainMenu" parent="CanvasLayer" node_paths=PackedStringArray("settings") instance=ExtResource("3_qavb3")]
+visible = false
+settings = NodePath("../Settings")
+
+[node name="Settings" parent="CanvasLayer" instance=ExtResource("4_c3cnt")]
+visible = false
+
+[node name="Restart" type="TextureButton" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("13_x3e7g")
+
+[connection signal="just_hit" from="Player" to="." method="_on_player_just_hit"]
+[connection signal="pressed" from="CanvasLayer/Restart" to="." method="_on_restart_pressed"]

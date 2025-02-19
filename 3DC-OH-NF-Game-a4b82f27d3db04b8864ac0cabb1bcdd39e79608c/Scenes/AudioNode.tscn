@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx5pq1mxhmtoq"]
+
+[ext_resource type="AudioStream" uid="uid://cgnv3cfwvtb8a" path="res://Audio/click.wav" id="1_nsrob"]
+[ext_resource type="Script" path="res://Scripts/audio_node.gd" id="2_pc58u"]
+
+[node name="AudioNode" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_nsrob")
+autoplay = true
+script = ExtResource("2_pc58u")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

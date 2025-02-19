@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://3gise583pwpc"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd" id="1_q1b8t"]
+[ext_resource type="Texture2D" uid="uid://cg5qmsh4imexf" path="res://Sprites/Google Chrome Dino SpriteSheet.png" id="2_efi8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eljq7"]
+size = Vector2(93, 23)
+
+[sub_resource type="Curve" id="Curve_efj0w"]
+min_value = -1.0
+_data = [Vector2(0, -0.00290334), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_cpxqg"]
+offsets = PackedFloat32Array(0, 0.37037, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Obstacle" type="Node2D"]
+script = ExtResource("1_q1b8t")
+obstacle_id = "jump_pad"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.11765, 0.337838)
+texture = ExtResource("2_efi8e")
+region_enabled = true
+region_rect = Rect2(446, 0, 34, 74)
+
+[node name="Hitbox" type="Area2D" parent="."]
+visible = false
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_eljq7")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+local_coords = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+orbit_velocity_min = -3.0
+orbit_velocity_max = 3.0
+orbit_velocity_curve = SubResource("Curve_efj0w")
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+color = Color(0.32549, 0.32549, 0.32549, 1)
+color_ramp = SubResource("Gradient_cpxqg")
