@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://doh5ngl1a7v3y"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd" id="1_ffu87"]
+[ext_resource type="Texture2D" uid="uid://cvohumuyhjxpu" path="res://Sprites/Obstacles/billboard.png" id="2_tph40"]
+
+[node name="Obstacle" type="Node2D"]
+script = ExtResource("1_ffu87")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tph40")
+region_rect = Rect2(446, 0, 34, 74)

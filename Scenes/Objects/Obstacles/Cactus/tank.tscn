@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://brexnjpdjka8l"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd" id="1_uduci"]
+[ext_resource type="Texture2D" uid="uid://wwl3hinrnhgb" path="res://Sprites/Obstacles/tank.png" id="2_hrwoj"]
+[ext_resource type="AudioStream" uid="uid://bop0vgx8v4n0" path="res://Audio/tank.wav" id="3_0lefr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttv7x"]
+atlas = ExtResource("2_hrwoj")
+region = Rect2(0, 0, 88, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpt8k"]
+atlas = ExtResource("2_hrwoj")
+region = Rect2(88, 0, 88, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lid4w"]
+atlas = ExtResource("2_hrwoj")
+region = Rect2(176, 0, 88, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdeg6"]
+atlas = ExtResource("2_hrwoj")
+region = Rect2(264, 0, 88, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl1qc"]
+atlas = ExtResource("2_hrwoj")
+region = Rect2(352, 0, 88, 94)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o1x5j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttv7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpt8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lid4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdeg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kl1qc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eljq7"]
+size = Vector2(193, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jduk"]
+size = Vector2(59.25, 43)
+
+[node name="Obstacle" type="Node2D"]
+script = ExtResource("1_uduci")
+obstacle_id = "tank"
+speed = 1.5
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -103)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_o1x5j")
+autoplay = "default"
+frame_progress = 0.165229
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-23.5, -6)
+shape = SubResource("RectangleShape2D_eljq7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-27, -84)
+shape = SubResource("RectangleShape2D_8jduk")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0lefr")
+autoplay = true
+max_distance = 1000.0

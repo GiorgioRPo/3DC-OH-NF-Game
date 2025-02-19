@@ -1,8 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://4jm41curqcp0"]
+[gd_scene load_steps=18 format=3 uid="uid://4jm41curqcp0"]
 
 [ext_resource type="Script" path="res://Scripts/Objects/player.gd" id="1_lvxql"]
+[ext_resource type="Shader" path="res://Resources/Shaders/rainbow.gdshader" id="2_mtxgr"]
 [ext_resource type="Texture2D" uid="uid://xn8eq6mhn8o" path="res://Sprites/DinoWalk.png" id="2_u18lu"]
+[ext_resource type="Texture2D" uid="uid://dk45kwc4vbwtv" path="res://Sprites/UI/SliderGrabber.png" id="3_htgs8"]
 [ext_resource type="Texture2D" uid="uid://bndt2l82maxqq" path="res://Sprites/DinoDuck.png" id="3_lhtuh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v78a1"]
+shader = ExtResource("2_mtxgr")
+shader_parameter/no_col = 3
+shader_parameter/color_1 = Vector3(0, 0, 1)
+shader_parameter/color_2 = Vector3(0, 1, 0)
+shader_parameter/color_3 = Vector3(1, 0, 0)
+shader_parameter/color_4 = Vector3(1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iah6n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0kw8"]
 atlas = ExtResource("2_u18lu")
@@ -80,8 +92,22 @@ size = Vector2(110, 52)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_lvxql")
+rainbow_shader = ExtResource("2_mtxgr")
+
+[node name="Invincibility" type="TextureProgressBar" parent="."]
+material = SubResource("ShaderMaterial_v78a1")
+offset_left = 64.0
+offset_top = -69.0
+offset_right = 192.0
+offset_bottom = 59.0
+rotation = 1.5708
+max_value = 300.0
+fill_mode = 8
+nine_patch_stretch = true
+texture_progress = ExtResource("3_htgs8")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_iah6n")
 sprite_frames = SubResource("SpriteFrames_nsgoo")
 animation = &"run"
 autoplay = "run"
@@ -91,6 +117,7 @@ position = Vector2(-6, 1)
 shape = SubResource("RectangleShape2D_otdct")
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 4
 monitorable = false
@@ -114,4 +141,9 @@ target_position = Vector2(0, 57)
 hit_from_inside = true
 collide_with_areas = true
 
+[node name="Tolerance" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="Tolerance" to="." method="_on_tolerance_timeout"]

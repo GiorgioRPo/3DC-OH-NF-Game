@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://xqo58v6xvt4c"]
+
+[ext_resource type="Texture2D" uid="uid://cg5qmsh4imexf" path="res://Sprites/Google Chrome Dino SpriteSheet.png" id="1_8px0v"]
+[ext_resource type="Script" path="res://Scripts/Decor/cloud.gd" id="2_6t3p0"]
+
+[node name="Cloud" type="Sprite2D"]
+z_index = -1
+texture = ExtResource("1_8px0v")
+region_enabled = true
+region_rect = Rect2(166, 0, 92, 29)
+script = ExtResource("2_6t3p0")

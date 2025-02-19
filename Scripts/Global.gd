@@ -12,4 +12,5 @@ func instance_node(node, parent, position=Vector2.ZERO):
 	parent.add_child(node_instance)
 	if position != Vector2.ZERO:
 		node_instance.global_position = position
+	return node_instance
 	

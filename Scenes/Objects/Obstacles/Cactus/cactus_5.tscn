@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bya6lr0a55pr5"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Obstacles/Cactus/cactus_obstacle.gd" id="1_g20tf"]
+[ext_resource type="Texture2D" uid="uid://cg5qmsh4imexf" path="res://Sprites/Google Chrome Dino SpriteSheet.png" id="2_0rvjw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eljq7"]
+size = Vector2(62, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8w0s"]
+size = Vector2(8, 28.7813)
+
+[node name="Obstacle" type="Node2D"]
+script = ExtResource("1_g20tf")
+obstacle_id = "cactus"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("2_0rvjw")
+region_enabled = true
+region_rect = Rect2(702, 0, 100, 102)
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -11.5)
+shape = SubResource("RectangleShape2D_eljq7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-43, -19)
+shape = SubResource("RectangleShape2D_w8w0s")
