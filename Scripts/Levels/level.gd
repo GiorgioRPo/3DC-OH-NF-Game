@@ -146,6 +146,13 @@ func _process(delta: float) -> void:
 	$Floor.material.set_shader_parameter("speed", Vector2(game_speed, 0))
 
 func _on_player_just_hit() -> void:
+	if is_flipped and is_flipped_x:
+		animation_player.play("flip_both")
+	elif is_flipped_x:
+		animation_player.play_backwards("flip_game_3")
+	elif is_flipped:
+		animation_player.play_backwards("flip_game_2")
+	
 	is_game_over = true
 	game_speed = 0
 	$CanvasLayer/Restart.show()

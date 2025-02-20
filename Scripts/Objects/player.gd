@@ -105,7 +105,7 @@ func _physics_process(delta: float)  -> void:
 		$Sprite.animation = "jump"
 		velocity.y += -gravity * delta * gravity_direction
 		if holding_down:
-			velocity.y += delta * down_speed * gravity_direction
+			velocity.y += delta * down_speed * gravity_direction / scale.y
 		jump_duration += delta
 	
 	if Input.is_action_pressed("jump"):
